@@ -1,0 +1,194 @@
+<html>
+  <body>
+    <p id="top">This is id='top'. used for moving to top</p>
+    <!-- use nav only for most important link when there are multiple links -->
+    <!-- article should be used for the most important blocks of text that is meant to be distrubed. section should be for relatively less important contents -->
+    <!-- use aside for content that suppliments the main article -->
+    <!-- div should mainly be used to group contents that belong to same column -->
+
+    <!-- footer for contact, copyright, about, privacy information, faq -->
+
+    <!-- title text you want to see when you hover over it-->
+    <p title="Famous person">Da Vinci(hover over me)</p>
+    <!-- address for contanct info for author, organization -->
+    <!-- address shoulde be nested inside an article or footer tag -->
+
+    <!-- most appropriate way to add a caption to an image
+    <figure>
+      <figcaption>caption goes here</figcaption> only one figcaption per figure
+      <img src="wherever"/> image goes here
+    </figure>
+    -->
+    <blockquote title="this is blockquote">This is an inline blockquote.</blockquote>
+    <p><strong>This is strong text <strong>This is nested strong which is semantically more important</strong></strong></p>
+    <p><em>This is em text. Use strong and em instead of b and i tag.</em></p>
+    <p>This is normal text<sup>This is superscript</sup>Normal again<sub>this is subscript</sub>
+    <p title='del tag'><del>this is inside del tag</del></p>
+    <p title='s tag'><s>This is s tag</s></p>
+    <pre title='code tag nested inside pre'>
+      <code>
+          public static void main(String[] ar){
+            System.out.println("hello");
+          }
+      </code>
+    </pre>
+    <small>Small text used for legal, coptyrights, disclaimers</small>
+    <p>This is meter tag. At the time of this writing, meter is sup-
+ported only by Chrome 11+ and Opera 11+. This
+partially explains why you don’t yet see it in
+the wild too much. Feel free to use it, but just
+understand that most browsers will render the
+meter text rather than the visual gauge by
+default
+      <meter low="0.25" high="0.75" optimum="0" value="0.21">low < 25%</meter>
+      <meter low="0.25" high="0.75" optimum="0" value="0.51">51%</meter>
+      <meter low="0.25" high="0.75" optimum="0" value="0.81">high > 75%</meter>
+    </p>
+    <p>progress bar not supported by all browsers, if not supported renders a text instead.
+      <progress max="100" value="20"id="progressBar">20% saved</progress>
+    </p><br/><br/><br/>
+    <h2>Images</h2>
+    <p>The JPEG format is good for color photo-graphs because it handles large amounts  of color and it compresses well, so your file
+      sizes will be small A. It is a lossy format, so you lose some of the image’s original information when you save it as a JPEG,
+      but usually this is a worthy compromise, because your pages load quickly.</p>
+    <p>The PNG and GIF formats are often used when you’re saving files like logos with
+      large amounts of solid colors and patterns or when you need transparency. The PNG
+      and GIF formats compress areas of con-tinuous colors or repetitive patterns better
+      than the JPEG format does. PNG is often he better choice, because it has a better
+      compression algorithm for smaller file sizes and it has superior transparency support </p>
+    <p> GIF and PNG-8 images can have only 256 colors, which is often fine
+      for logos and icons.Photographs and complex illustrations
+      should be saved in the JPEG or PNG-24 format, because they accommodate more
+      colors in a single image.</p>
+    <p>Animated images can be saved as GIFs but not as
+    JPEGs or PNGs. Animation inside an image is becoming
+    increasingly rare. Animation is generally created using Flash, CSS Animations, and
+    JavaScript. In recent years, the use of Flash for animations on the Web has declined
+    because of iOS’s lack of support for Flash and the increasing capability of JavaScript
+    and CSS.</p>
+    <footer id="footer" role="contentinfo">
+    <article>
+      <address>
+        Email her at <a>janedoe@gmail.com</a>
+      </address>
+    </article>
+    </footer>
+  </body>
+    <p>icon images are of size 114 x 114 px and are in .ico format</p>
+    <br/>
+    <h1>links</h2>
+    <div>
+      <a href="#top">Jump to top. use id inside of href.</a>
+      <p><pre><code>If the anchor is in a separate document,
+      use &lt;a href="page.html#anchor-name"&gt;
+      to reference the section. (There should be
+      no space between the URL and the #.) If the
+      anchor is on a page on a different server, you’ll
+      have to type &lt;a href="http://www.site
+      .com/path/page.html#anchor-name"&gt;
+      (with no spaces).      no space between the URL and the #.)
+       If the anchor is on a page on a different server, you’ll have to type
+        &lt;a href="http://www.site .com/path/page.html#anchor-name"&gt;
+          (with no spaces).</code></pre></p>
+    </div>
+    <!-- video formats
+      html5 supports ogg theora, mp4, webm
+      provide atleast 2 formats - mp4 and webm
+      free tools that can help you with this. Here are two:
+      Miro Video Converter, at www.mirovideoconverter.com
+      HandBrake, at http://handbrake.fr
+        src Specifies the URL to the video file.
+        autoplay Automatically starts playing the video as soon as it can.
+        controls Adds the browser’s default control set to the video.
+        muted Mutes the video’s audio (not currently supported by any browser).
+        loop Plays the video in a loop.
+        poster Specifies an image file to display (instead of the first frame of the video) when it loads.
+        Takes a URL to the required image file.
+
+        width The width of the video in pixels.
+        height The height of the video in pixels.
+
+        preload Hints to the browser how much of the video it is to load. It can take three different values:
+        none doesn’t load anything.
+        metadata loads only the video’s metadata (e.g., length and dimensions).
+        auto lets the browser decide what to do (this is the default setting).
+
+        In that example, you added a text mes-
+        sage that would be displayed to visitors
+        using a browser that is not HTML5 capable.
+        You can replace that piece of text with a
+        standard hyperlink to the video, allowing
+        the user to download the file and view it at
+        their leisure.
+
+        As well as providing a download link, you
+        could (and probably should) embed a
+        Flash fallback player that can play the MP4
+        video file.
+      -->
+      <video controls="controls">
+        <source src="" type="video/mp4">
+        <source src="" type="video/webm">
+        <p>Sorry, your browser doesn't support video element</p>
+        <a href="paddle-streamer.mp4">Download</a>
+      </video>
+
+      <!-- audio
+        you can use
+        ogg
+        mp3
+        wav
+        aac
+        mp4
+        formats
+      -->
+      <audio controls="controls">
+        <source src="piano.ogg" type="audio/ogg">
+        <source src="piano.mp3" type="audio/mp3">
+        <a href="piano.mp3">Download the audio</a>
+      </audio>
+
+      <!-- tables -->
+      <table>
+        <caption>This is caption</caption>
+        <thead>
+          <tr>
+            <th scope="col">heading1</th>
+            <th scope="col">heading2</th>
+            <th scope="col">heading3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">row heading1</th>
+            <td>1</td>
+            <td>2</td>
+            <td rowspan='2'>3</td>
+          </tr>
+          <tr>
+            <th scope="row">row heading2</th>
+            <td>4</td>
+            <td>5</td>
+
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">total</th>
+            <td colspan="2">7</td>
+
+            <td>9</td>
+          </tr>
+        </tfoot>
+      </table>
+</html>
+
+<!-- ARIA
+role = 'banner' region that contains site-oriented content rather than page specific content
+      these are logos, site-specific search tool. add this to page masthead
+role='navigation' a collection of navigational elements.
+role='main' added to main content. can be div, article or section. avoid more than one mains
+role='complimentary' supporting section of document. add it to aside or div that contains sucomplimentary info.
+role='contentInfo' added to block that contains info about parent document. daddd it once to footer tag
+
+-->

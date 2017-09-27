@@ -1,0 +1,67 @@
+@media only screen and (min-width: 1141px) {
+/*-----BODY -----*/
+	body {
+        background-image: url(../space.gif)
+    }
+
+/*-----WRAPPER -----*/
+	#wrapper {
+        padding: 125px 0 140px 0;
+    }
+
+/*-----CONTAINER -----*/
+	#container {
+		margin: 2em auto;
+		border: 1px solid #888;
+        
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+	}
+
+/*-----HEADER -----*/
+    header {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        position: relative;
+    }
+
+header img.headerImage {
+    display: block;
+    position: absolute;
+    top: -90px;
+    right: -60px;
+}
+    header ul.icons{
+        padding-right: 65px;
+    }
+
+    header ul.icons a:hover{
+        opacity: 1;
+    }
+/*-----NAVigation -----*/
+
+    nav ul li a{
+        transition: background .5s ease;
+    }
+
+
+/*-----CONTENT -----*/
+
+
+
+/*----- FOOTER -----*/
+    footer {
+        width: 1180px;
+        margin: 0 auto;
+        position: relative;
+    }
+    footer .left{
+        position: absolute;
+        top: -20;
+        height: 20px;
+        width: 20px;
+        border-right: 20px solid red;
+        border-top: 20px solid transparent;
+    }
+
+}

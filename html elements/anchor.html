@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+             a {
+                color: #3489db;
+                padding: 0 0.25em 0.25em 0.05em;
+                position: relative;
+                vertical-align: bottom;
+                display: inline-block;
+                transition: all 0.35s;
+                overflow: hidden;
+            }
+            
+            a::after{
+                content: attr(data-linktext);
+                background: #3498db;
+                color: white;
+                position: absolute;
+                display: block;
+                text-align: center;
+                
+                top: 0;
+                right: 100%;
+                left: -100%;
+                transition: all 0.35s;
+            }
+            a:hover::after{
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                transition: all 0.35s;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        some text <a data-linktext="anchor text">anchor text</a> more text
+    </body>
+</html>

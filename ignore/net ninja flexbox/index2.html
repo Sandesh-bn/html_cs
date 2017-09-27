@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+            }
+            body{
+                background: #eee;
+            }
+            .wrapper{
+                width: 100%;
+                max-width: 960px;
+                margin: 0 auto;
+            }
+            nav{
+                background: #333;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            nav a{
+                text-decoration: none;
+                text-align: center;
+                color: white;
+                display: block;
+                padding: 10px;
+            }
+            nav a:hover{
+                background: #555;
+            }
+            a.twitter {
+                background: url(tw.png) no-repeat center;
+                background-size: 80%;
+            }
+            a.fb{
+                background: url(fb.png) no-repeat center;
+                background-size: 80%;
+            }
+            .social {
+                max-width: 80px;
+            }
+            @media screen and (min-width: 768px){
+                nav {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
+                nav ul{
+                    display: flex;
+                    
+                }
+                nav ul li{
+                    flex: 1;
+                }
+                
+            }
+           
+            
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>About</a></li>
+                    <li><a href='#'>Store</a></li>
+                    <li><a href='#'>Contact</a></li>
+                </ul>
+                <ul class='social'>
+                    <li><a href='' class='fb'></a></li>
+                    <li><a href='' class='twitter'></a></li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>

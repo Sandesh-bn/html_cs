@@ -1,0 +1,45 @@
+@media only screen and (min-width: 600px) {
+/*-----BODY -----*/
+	body {}
+
+
+
+/*-----CONTAINER -----*/
+	#container {}
+
+
+
+/*-----HEADER -----*/
+header h1{
+    padding-top: 1.1em;
+}
+    
+
+
+
+/*-----NAVigation -----*/
+    nav {
+        background: #004bb8;
+    }
+	nav ul li a{	
+        float: left;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+    }
+	nav ul li a {}
+
+
+
+/*-----CONTENT -----*/
+
+/*----- IMAGES ---*/
+    figure.w33{
+        width: 46%;
+        float: right;
+    }
+
+/*----- FOOTER -----*/
+
+	
+}

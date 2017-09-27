@@ -1,0 +1,69 @@
+@media only screen and (min-width: 600px) {
+/*-----BODY -----*/
+	body {}
+
+
+
+/*-----CONTAINER -----*/
+	#container {}
+
+
+
+/*-----HEADER -----*/
+
+
+
+
+/*-----NAVigation -----*/
+    #navWrapper{
+        background: #877550;
+    }
+    nav ul{
+        margin-left: 2%;
+    }
+    
+	nav ul li {
+        float: left;
+        border-right: solid 1px rgba(0,0,0,0.5);
+        border-left: solid 1px rgba(255, 255, 255, 0.5);
+    }
+	nav ul li a {
+        display: block;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: .8em;
+        padding: 1.2em .9em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover{
+        color: rgba(0,0,0,0.8);
+    }
+    nav ul li ul{
+        z-index: 99;
+        position: absolute;
+        background: #877550;
+        left: -999em;
+        width: 10em;
+    }
+    nav ul li ul li{
+        float: none;
+        border-right: none;
+        border-bottom: solid 1px rgba(0,0,0,0.5);
+    }
+    nav li:hover ul{
+        left: auto;
+        margin-left: 0;
+    }
+    nav li.current {
+        background: #584c32;
+    }
+
+/*-----CONTENT -----*/
+
+
+
+/*----- FOOTER -----*/
+
+	
+}

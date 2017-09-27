@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <style>
+        body{
+             background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+        }
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+            
+        }
+        .flex-nav{
+            
+            border: 4px solid rgba(255, 255, 255, 0.4);
+        }
+        .flex-nav ul{
+            display: flex;
+            
+            list-style-type: none;
+            justify-content: space-between;
+            border: 1px solid yellow;
+        }
+        .flex-nav ul li {
+            flex: 1;
+        }
+        .flex-nav ul li a{
+            text-decoration: none;
+        }
+        .flex-nav ul ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 2px solid orange;
+            display: flex;
+        }
+        li.social{
+            flex: 1;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='wrapper'>
+        <nav class='flex-nav'>
+            <ul>
+                <li><a href='#'>item 1</a></li>
+                <li><a href='#'>item 1</a></li>
+                <li><a href='#'>item 1</a></li>
+                <li><a href='#'>item 1</a></li>
+                <li><a href='#'>item 1</a></li>
+                <li><a href='#'>item 1</a></li>
+                <ul>
+                    <li class='social'>
+                        <a href='#'><i class='fa fa-twitter'></i></a>
+                    </li>
+                    <li class='social'>
+                        <a href='#'><i class='fa fa-twitter'></i></a>
+                    </li>
+                    <li class='social'>
+                        <a href='#'><i class='fa fa-twitter'></i></a>
+                    </li>
+                    <li class='social'>
+                        <a href='#'><i class='fa fa-twitter'></i></a>
+                </li>
+                </ul>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

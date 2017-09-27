@@ -1,0 +1,50 @@
+<html>
+    <head>
+    <style>
+        html, body{padding: 0;margin: 0;font-family: arial;}
+        .flex-container{
+            display: flex;
+            border: solid 4px #000;
+            flex-direction: row;/* default */
+        }
+        .flex-item{
+            font-size: 1.2em;
+            padding: 1em;
+            text-align: center;
+            color: white;
+        }
+        .flex-item:nth-child(3n){
+            background-color: red;
+        }
+        .flex-item:nth-child(3n+1){
+            background: green;
+        }
+        .flex-item:nth-child(3n+2){
+            background: purple;
+        }
+        .flex-item strong{
+            display: block;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div class='flex-container'>
+            <div class='flex-item'>
+                <em>Flex item</em>
+                <strong>1</strong>
+            </div>
+            <div class='flex-item'>
+                <em>Flex item</em>
+                <strong>2</strong>
+            </div>
+            <div class='flex-item'>
+                <em>Flex item</em>
+                <strong>3</strong>
+            </div>
+            
+        </div>
+    
+    </body>
+
+</html>

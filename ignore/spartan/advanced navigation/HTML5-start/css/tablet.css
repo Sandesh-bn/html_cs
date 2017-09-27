@@ -1,0 +1,68 @@
+@media only screen and (min-width: 600px) {
+/*-----BODY -----*/
+	body {}
+
+
+
+/*-----CONTAINER -----*/
+	#container {}
+
+
+
+/*-----HEADER -----*/
+
+header img {
+    width: auto;
+}
+
+    
+div.decorativeWrapper{
+    display: block;
+    
+    background: #0046eb;
+}
+div.decorativeWrapper div.left{
+    height: .9em;
+    width: 25%;
+    background: #ebb512;
+}
+/*-----NAVigation -----*/
+	nav ul li {	}
+	nav ul li a {
+         background: #3f3f3f;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    button#showPhoneNav{
+        display: none;
+    }
+    nav {
+        width: 25%;
+        float: left;
+    }
+    nav ul {
+        display: block;!important;
+        border: none;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: 0;
+       
+    }
+
+    nav ul li a:hover {
+          background: #272727;
+    }
+    nav ul li.selected a{
+        color: yellow;
+    }
+/*-----CONTENT -----*/
+    #content {
+        margin-left: 25%;
+        min-height: 30em;
+        
+    }
+
+
+/*----- FOOTER -----*/
+
+	
+}

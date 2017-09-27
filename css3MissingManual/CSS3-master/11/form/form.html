@@ -1,0 +1,138 @@
+<!--
+<!doctype html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Subscribe to CosmoFarmer.com</title>
+<link href="global.css" rel="stylesheet">
+<style>
+
+</style>
+</head>
+<body>
+<h1>Reader Subscription Form</h1>
+<form class="subform"  method="post" action="submit.html">
+	<p>
+		<label for="name">What is your name?</label>
+		<input type="text" name="name" id="name">
+	</p>
+	<p>
+		<label for="email">What is your email address?</label>
+		<input type="text" name="email" id="email">
+	</p>
+	<p>Rate your apartment farming skills
+		<label>
+			<input name="skill" type="radio" value="novice">
+			Novice</label>
+		<label>
+			<input name="skill" type="radio" value="intermediate">
+			Intermediate</label>
+		<label>
+			<input name="skill" type="radio" value="advanced">
+			Advanced</label>
+	</p>
+	<p>
+		<label for="refer">Where did you hear about us? </label>
+		<select name="refer" id="refer">
+			<option value="null">Select One</option>
+			<option value="1">Friend</option>
+			<option value="2">Herban Jungle</option>
+			<option value="3">Compost Today</option>
+			<option value="4">Vanity Fair</option>
+		</select>
+	</p>
+	<p>
+		<label for="comments">Any additional comments? </label>
+		<textarea name="comments" cols="35" rows="4" id="comments"></textarea>
+	</p>
+	<p>
+		<input type="submit" value="Subscribe">
+	</p>
+</form>
+</body>
+</html>
+-->
+<html>
+	<head>
+		<style>
+			body{
+				background: #003366;
+				color: white;
+			}
+			#wrapper{
+				width: 760px;
+				margin: 0 auto;
+				padding: 30px;
+			}
+			#wrapper h1{
+				border-bottom: 1px dashed white;
+				padding-bottom: 5px;
+			}
+			#wrapper td {
+				padding: 8px;
+			}
+			#wrapper label{
+				font-size: 1.5em;
+			}
+			#wrapper input[type='text']
+			,#wrapper input[type='email']
+			,#wrapper select{
+				height: 2em;
+				border-radius: 12px 12px;
+			}
+			#wrapper input[type='text'],
+			#wrapper input[type='email']{
+				background: lightblue;
+			}
+			#wrapper input[type='text']:focus,
+			#wrapper input[type='email']:focus{
+				background:white
+			}
+			#wrapper button{
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrapper'>
+			<h1>Reader Subscription Form</h1>
+			<form method="post">
+				<table>
+					<tr>
+						<td><label for='input_name'>What is your name?</label></td>
+						<td><input type='text' id='input_name'></td>
+					</tr>
+					<tr>
+						<td><label for='input_email'>What is your email?</label></td>
+						<td><input type='email' id='input_email'></td>
+					</tr>
+					<tr>
+						<td><label for='skill_check'>Rate your skill level</label>
+						<td><input type='radio' name='skill' value='novice'>Novice
+							<input type='radio' name='skill' value='intermediate'>Intermediate
+							<input type='radio' name='skill' value='Expert'>Expert
+						</td>
+					</tr>
+					<tr>
+						<td><label for='location'>Where did you hear about us?</label>
+						<td>
+							<select>
+								<option value='Internet' name='location'>Internet</option>
+								<option value='Magazine' name='magazine'>Magazine</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Any additional comments</td>
+						<td><textarea cols='40' rows='4'>Enter some</textarea></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button type='submit' value='Submit'>Submit</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</body>
+
+</html>

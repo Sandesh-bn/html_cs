@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <style>
+      div {
+        background: 'yellow';
+        width: 300px;
+      }
+      p,
+      .example {
+        background: 'white';
+        border: 6px solid blue;
+        margin: 10px;
+        padding: 5px;
+      }
+      .example{
+        background: 'white';
+        border-color: 'purple';
+        width: 200px;
+      }
+      #container {
+        background: url(../img/bg-bluebench.jpg) repeat-y;
+        width: 90%;
+      }
+      #page {
+        background: #fef6f8;
+        width: 97.91%;
+      }
+      #main{
+        width: 71%;
+      }
+      .photo{
+        height: 75px;
+        width: 100px;
+      }
+      a:focus,
+      a:hover,
+      a:active{
+        background: #f3cfb8;
+      }
+      .logo a:hover{
+        background: transparent;
+      }
+      .sidebar {
+        background: #f5f8fa;
+        color: red;
+      }
+      #footer {
+        border-top: 2px dotted #b74e07;
+        clear: both;
+      }
+      #footer h1{
+        margin-bottom: .25em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <header id="masthead" role='banner'>
+        <p class='logo'><a href='/'>photobarcelona&hellip;<span>capturing barcelona treasures
+        </span></a></p>
+
+        <div>
+          <nav role='navigation'>
+
+          </nav>
+          <form method='get' role='search'>
+
+          </form>
+        </div>
+      </header>
+
+      <!-- main content -->
+      <div id='main' role='main'>
+        <h1>Recent entries</h1>
+        <!-- Entry1 -->
+        <section class='entry'>
+          <header>
+            <h2 lang='es'>hosptial sant pau</h2>
+            <p class='date'><time datetime='2011-06-26'>June 26</time></p>
+          </header>
+          <div class='intro'>
+            <p>some garbage....csome more garbage</p>
+            <p class='continued'><a href='#'>continued</a></p>
+          </div>
+        </section>
+        <!-- end entry 1 -->
+        <!-- Entry2 -->
+        <section class='entry'>
+          <header>
+            <h2 lang='es'>hosptial sant pau</h2>
+            <p class='date'><time datetime='2011-06-26'>June 26</time></p>
+          </header>
+          <div class='intro'>
+            <p>some garbage....csome more garbage</p>
+            <p class='continued'><a href='#'>continued</a></p>
+          </div>
+        </section>
+        <!-- end entry 2 -->
+        <!-- Entry3 -->
+        <section class='entry'>
+          <header>
+            <h2 lang='es'>hosptial sant pau</h2>
+            <p class='date'><time datetime='2011-06-26'>June 26</time></p>
+          </header>
+          <div class='intro'>
+            <p>some garbage....csome more garbage</p>
+            <p class='continued'><a href='#'>continued</a></p>
+          </div>
+        </section>
+        <!-- end entry 3 -->
+      </div>
+      <!-- end of main -->
+
+      <!-- Start sidebar -->
+      <div id='related' class='sidebar' role='complementary'>
+        <aside class='excerpt'>
+          <h2>From my window</h2>
+          
+        </aside>
+        <aside class="archive">
+          <nav role='navigation'>
+            <h2>Archive</h2>
+          </nav>
+        </aside>
+      </div>
+      <!-- end of sidebar -->
+      <!-- start footer -->
+      <footer id='footer' role='contentinfo'>
+        <h1>about thsis photoblog</h1>
+      </footer>
+      <!-- end footer -->
+    </div>
+  </body>
+
+</html>

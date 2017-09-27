@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!-- This start file was build by Paul Cheney  -->
+<title>HTML5 Start Site by Paul Cheney</title>
+
+<!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging whena phone is turned sideways-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<!-- LOAD THE LATEST VERSION OF JQUERY-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600|Overlock" rel="stylesheet">
+    
+<!----- STYLE SHEETS ----->
+<link href="css/reset.css" rel="stylesheet">
+<!-- phone-default -->
+<link href="css/phone-default.css" rel="stylesheet">
+<!-- enhance-tablet -->
+<link href="css/tablet.css" rel="stylesheet">
+<!-- enhance-desktop -->
+<link href="css/desktop.css" rel="stylesheet">
+
+
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+     
+</head>
+<body>
+<div id="wrapper">
+<div id="container">
+	
+	<header>
+        <img src="headerImage.png" class="headerImage">
+        <ul class='icons'>
+            <li><a href="#"><img src='facebook.png'></a></li>
+            <li><a href="#"><img src='twitter.png'></a></li>
+            <li><a href="#"><img src='youtube.png'></a></li>
+        </ul>
+    <hgroup>
+    <h1>Site Name</h1>
+    <h2>Tag Line</h2>
+    </hgroup>
+    </header>
+    
+    
+    <!-- page navigation links here -->
+    <nav>
+    <ul>
+    	<li><a href="#menu1">Fonts</a></li>
+        <li><a href="#menu2">Gradients</a></li>
+        <li><a href="#menu3">Shadows</a></li>
+        <li><a href="#menu4">Textures</a></li>
+        <li><a href="#menu5">Corners</a></li>
+        <li><a href="#menu6">Transparency</a></li>
+        <li><a href="#menu7">Transitions</a></li>
+        <li><a href="#menu8">Backgrounds</a></li>
+        <li><a href="#menu9">Borders</a></li>
+        <div class="keepOpen"></div>
+    </ul>
+    </nav>
+    
+    
+    <!-- page content here -->
+    <div id="content">
+    <h1>Assignment Resources</h1>
+        <hr/>
+<article>
+  <p>This site was based on the <a href="https://kuler.adobe.com/Stars-Dark-color-theme-829503/" target="_blank">Stars Dark</a> themem from Adobe Kuler</p></article>
+
+<article id="menu1">
+<h2>Embedding Fonts</h2>
+<p><a href="http://www.google.com/webfonts" target="_blank">Google Fonts</a> can be added to your site and are downloaded when the page is loaded using an http request. For this page I used both Open Sans and Overlock SC font families. Notice that the Open Sans is using two different weights, 300 and 600. Instead of using two different http requests, I combined them together using a bar as shown below.</p> <code>family=Open+Sans:300,600|Overlock+SC</code>
+<p>Read more about  <a href="http://stackoverflow.com/questions/11570082/optimizing-multiple-google-web-fonts" target="_blank">Optimizing Multiple Google Web Fonts</a></p>
+<a href="#wrapper" class="top">Top</a>
+</article>    
+ 
+
+
+<article  id="menu2">
+<h2>CSS Gradients</h2>
+<p>CSS Gradients are easy and use and supported on all modern browsers. You have to use prefixes to handle the possibility that you customer is using an older. <a href="http://www.colorzilla.com/gradient-editor/" target="_blank">This website</a> will allow you to easily create complex gradients using a Photoshop like interface. In addition to making a gradient from one color to another, you can also use RGBA colors to include color transparency. The menu bar uses an rgba gradient over the nav color to create a gradient.</p><code>background: linear-gradient(to bottom,  rgba(255,255,255,0.3) 0%,rgba(0,0,0,0.2) 100%);</code>
+<a href="#wrapper" class="top">Top</a>
+</article> 
+ 
+ 
+ 
+
+<article id="menu3">
+<h2>Shadows</h2>
+<p><a href="http://css-tricks.com/snippets/css/css-box-shadow/" target="_blank">CSS drop shadows</a> give your page a sense of dimension on the Z axis. Text shadows as seen on the page name can help define the lettering. BE CAREFUL not to overuse this!</p>
+
+<div class="drop">This is an example of a drop shadow</div>
+<code>box-shadow: 4px 4px 8px rgba(0,0,0,.7);</code>
+
+<div class="inset ">This is an example of an inset shadow</div>
+<code>box-shadow: 0 0 6px rgba(0,0,0,.7) inset;</code>
+
+<div class="glow">This is an example of a red glow</div>
+<code>box-shadow: 0 0 5px #5c0000;</code>
+
+<a href="#wrapper" class="top">Top</a>
+</article>
+
+
+
+<article id="menu4">
+<h2>Textures</h2>
+<p>Background textures can add interest but must be used with caution. It's really easy to go overboard and make you site look hideous. This site uses the &quot;<a href="http://subtlepatterns.com/?s=soft+wallpaper&submit=Search" target="_blank">Soft Wallpaper</a>&quot; texture from <a href="http://subtlepatterns.com/" target="_blank">Subtle Patterns</a> in the content area. I also used a star field repeating texture from star net blog who is now OUT OF BUSINESS so you can try <a href="http://a1star.com/star-space-background-2.php" target="_blank">a1stars.com</a> instead. The star field was originally 282,993 bytes but I  compressed it using JPEG quality of 1, yes one, and got the size to 10,747 bytes which is 1/25th of the original size. </p>
+<p> <a href="http://www.noqta.it/dromoscopio/" target="_blank">Noqta</a> is a site that features bright and colorful background textures.</p>
+<a href="#wrapper" class="top">Top</a>
+</article> 
+
+
+
+<article id="menu5">
+<h2>Round Corners</h2>
+<p><a href="http://davidwalsh.name/css-rounded-corners" target="_blank">Rounded corners</a> are easy and use and well supported on all browsers except old versions of IE. I use them on navigation buttons as well as page structure elements. This page features rounded corners on the top but not on the bottom. Be careful with rounded edges as you can easily create a disaster of your site.</p>
+
+<div class="roundEven">Even rounded</div>
+<code>border-radius: 14px;</code>
+
+<div class="roundTop">Top Rounded</div>
+<code>border-top-left-radius: 11px; border-top-right-radius: 11px;</code>
+
+
+<div class="roundSag">Rounded Bottom</div>
+<code>border-radius: 90px / 15px;</code>
+
+<div class="roundPinched">Pinched</div>
+<code>border-bottom-left-radius: 130px 5px; border-bottom-right-radius: 130px 5px;</code>
+
+<div class="roundBall">Ball</div>
+<code>height: 60px; width: 60px; border-radius: 30px;</code>
+
+<p>Read more about borders from <a href="http://www.the-art-of-web.com/css/border-radius/" target="_blank">The art of the web</a></p> 
+<a href="#wrapper" class="top">Top</a>
+</article> 
+ 
+ 
+
+
+ 
+
+<article id="menu6">
+<h2>Transparency</h2>
+<p> CSS supports transparency in a couple of ways. First, you can specify an rgb color with an alpha values know as rgba().  The bar below "Assignment Resources" at the top of this page uses rgba with an alpha value on the left of 1 (no transparency) and an alpha value on the right of 0  (fully transparent).</p>
+<code>rgba(91,0,0,1)</code>
+<code>rgba(91,0,0,0)</code>
+<p>Second, there is opacity with a value between 0 and 1. The social media icons at the top of this page have an alpha value of .7 which changes to an opacity value of 1 on mouse hover (desktop only)</p>
+<code>header ul.icons a  {opacity: 0.7;}</code>
+<code>header ul.icons a:hover  {opacity: 1;}</code>
+<a href="#wrapper" class="top">Top</a>
+</article> 
+ 
+ 
+ 
+
+
+ 
+ 
+ 
+<article  id="menu7">
+<h2>Transitions</h2>
+<p>CSS Transitions can be applied to almost any CSS property. You will need to specify what property gets transitioned, how long it take the transition to happen, and the effect used. Below is a shorthand version which is transitioning the opacity over 1/2 a second using ease. Do not place the transition code in the :hover CSS or it will only work half the time. </p>
+<code>transition: opacity .5s ease;</code>
+<p>The navigation links on the desktop version of this page use a <strong>background</strong> transition to darken the menu when you move your mouse over them. </p>
+<code>transition: background-color 5s ease;</code>
+<p>The social media icons at the top of the page also have an opacity transition applied (only on the desktop version of the site). Below is the complete code showing the anchor as well as the a:hover.</p>
+<code>header ul.icons a  {transition: opacity .5s ease;}<br>
+header ul.icons a:hover  {opacity: 1;}</code>
+
+
+
+<p>You can also transition the size of an image as show in the example below.</p>
+<p>These images are 300px wide by 200px tall. I scaled them to 25% of the page wide using the CSS.</p>
+<code>#content ul.carpics li {
+width: 25%; 
+}</code>
+<p> Then on mouse hover (desktop version only) the CSS scales them to 150%  using transform. This makes the images instantly jump larger.</p>
+<code>#content ul.carpics li a:hover img {transform: scale(1.5);}</code>
+<p>To make the transition smoother, I added a transition to make the images grow over 1/2 a second.</p>
+<code>#content ul.carpics li a img {transition: transform 0.3s ease-in-out;}</code>
+<ul class="carpics">
+<li><a href="#"><img src="car1.jpg"  alt="Car"></a></li>
+<li><a href="#"><img src="car2.jpg" alt="Car"></a></li>
+<li><a href="#"><img src="car3.jpg" alt="Car"></a></li>
+<li><a href="#"><img src="car4.jpg" alt="Car"></a></li>
+</ul>
+<div class="keepOpen"></div>
+<p>You can read more about CSS transitions on <a href="http://www.alistapart.com/articles/understanding-css3-transitions/" target="_blank">A List Apart</a></p>
+<a href="#wrapper" class="top">Top</a>
+</article>
+
+
+
+ <article  id="menu8">
+<h2>Large Desktop Backgrounds</h2>
+<p>The markup for this page starts out with the body tag which contains a "wrapper" division which hold a "container" division. The "container" division then holds the header, nav, page content and footer. The addition of the extra "wrapper" division makes it possible to add the sun and blue glow to the desktop version of this page.</p> 
+<code>
+body<br>
+div id="wrapper"<br>
+div id="container"<br>
+/div<br>
+/div<br>
+/body
+</code>
+<p>Since this image is loaded in the desktop.css it is not loaded on the phone or tablet. Therefore, it does not affect the page download speed for mobile devices.</p>
+<code>background:url(glow.png) no-repeat center top; </code>
+<p>You can read more about creating background on the <a href="http://webdesignerwall.com/tutorials/how-to-css-large-background/" target="_blank">web designer wall</a>. Just don't overdue it.</p>
+<a href="#wrapper" class="top">Top</a>
+</article> 
+
+
+
+
+
+ <article  id="menu9">
+<h2>Borders on Steroids</h2>
+<p>There are three properties required to make a border and they can be listed in the shorthand version in any order. You need to specify thickness, style and color. The dotted line separating each section of this page was created using the CSS below.</p> 
+   
+<code>border-bottom: dotted 2px #ccc;</code>
+
+<p>What you may not know is that you can use borders to create the footer at the bottom of this page. First you  add a couple of empty divisions.</p>
+<code>
+ div class="left" /div><br>
+ div class="right" /div
+</code>
+
+<p>Next place them in the correct spot using the position property. These are 20px wide and placed 20 px above the footer.</p> 
+<code>footer .left, footer .right {
+		position: absolute;
+		top:-20px;
+		width: 20px;
+		height:20px; }</code>
+
+<p>Finally specify two borders (one of them transparent) the get the angled look. </p>
+<code>border-right: 20px solid #976001; <br>
+border-top: 20px solid transparent;
+</code>
+<p>This works because there are only two borders created and they are as thick and the box is wide and tall. this creates a 45° angle. When the second border is transparent then you can see through to the background.</p>
+<p>You can read more about using borders on <a href="http://www.howtocreate.co.uk/tutorials/css/slopes" target="_blank">how to create</a>.</p> 
+<a href="#wrapper" class="top">Top</a>
+</article> 
+
+    </div><!-- end content -->
+    
+    </div> <!-- end container -->
+    <footer>
+        <div class="left"></div>
+        <div class="right"></div>
+    <p>&copy; Paul Cheney &bull; Responsive Start File</p>
+    </footer>
+    
+    
+    </div> <!-- end wrapper -->
+</body>
+</html>

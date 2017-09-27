@@ -1,0 +1,675 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    </head>
+    <body>
+        
+        <h1 class="animated infinite bounce">Example</h1>
+    </body>
+</html>
+  <!--
+   <html>
+    <head>
+        <style>
+            body{
+                background: lightgray;
+            }
+            #userForm{
+                padding: 2em;
+                width: 70%;
+                margin: 2em auto;
+                background: white;
+            }
+            #userForm input{
+                
+                width: 100%;
+            }
+            #userForm label{
+                
+            }
+            
+            #wrapper {
+                margin: 0 auto;
+                background: white;
+                width: 80%;
+                padding: 1em;
+                justify-content: space-between;
+            }
+            #wrapper div{
+                padding: 1em;
+                text-align: justify;
+            }
+            @media only screen and (min-width: 700px){
+                #wrapper{
+                    display: flex;
+                }
+                .sidebarOne{
+                    flex: 1;
+                }
+                .sidebarTwo{
+                    flex: 1;
+                }
+                .mainColumn{
+                    flex: 2;
+                }
+            }
+        </style>
+        
+    </head>
+<body>
+    <form id='userForm'>
+        <label for="formName">Name:</label>
+        <input type='text' id='formName'>
+        <label for="formEmail">Email:</label>
+        <input type='email' id='formEmail'>
+        
+    </form>
+    <div id="wrapper">
+        <div class="mainColumn">
+            <h1>Main Column</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium minima consectetur tenetur. Repudiandae, autem, voluptate modi deleniti sequi voluptatum!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium minima consectetur tenetur. Repudiandae, autem, voluptate modi deleniti sequi voluptatum!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium minima consectetur tenetur. Repudiandae, autem, voluptate modi deleniti sequi voluptatum!</p>
+        </div>
+        <div class="sidebarOne">
+            <h2>Sidebar One</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium minima consectetur tenetur. Repudiandae, autem, voluptate modi deleniti sequi voluptatum!</p>
+        </div>
+        <div class="sidebarTwo">
+            <h2>Sidebar Two</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam voluptatibus soluta, consequuntur, reiciendis debitis omnis fugiat libero pariatur amet laudantium minima consectetur tenetur. Repudiandae, autem, voluptate modi deleniti sequi voluptatum!</p>
+        </div>
+    </div>
+</body>
+</html>
+
+-->
+
+<!--
+<html>
+    <head>
+        <style>
+            #wrapper{
+                display: flex;
+                justify-content: space-between;
+            }
+            #wrapper div{
+                margin-left: 2em;
+                padding: 1em;
+            }
+            #wrapper div:nth-child(1){
+                background: lightpink;
+                flex: 1;
+            }
+            #wrapper div:nth-child(2){
+                background: lightyellow;
+                flex: 1;
+            }
+            #wrapper div:nth-child(3){
+                background: lightgreen;
+                flex: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <div class="long">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt</p>
+            </div>
+            <div class="medium">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum modi nisi tenetur sint dignissimos nulla, blanditiis nesciunt.</p>
+            </div>
+            <div class="shorter">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </body>
+</html>
+-->
+
+<!--
+<html>
+    <head>
+        <style>
+            .flex-container{
+                display: flex;
+                height: 20em;
+                border: 1px solid;
+                align-items: center;
+                flex-direction: column;
+                overflow: scroll;
+            }
+            div.flex-item{
+                padding: 1em;
+            }
+            div.flex-item:nth-child(n){
+                background: red;
+            }
+            div.flex-item:nth-child(2n){
+                background: lightgreen;
+            }
+            div.flex-item:nth-child(3n){
+                background: lightblue;
+                padding: 2em;
+            }
+            div.flex-item:nth-child(4n){
+                background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h1><em>flex item</em></h1>
+                <h1>1</h1>
+            </div>
+            <div class="flex-item">
+                <h1><em>flex item</em></h1>
+                <h1>2</h1>
+            </div>
+            <div class="flex-item">
+                <h1><em>flex item</em></h1>
+                <h1>3</h1>
+            </div>
+            <div class="flex-item">
+                <h1><em>flex item</em></h1>
+                <h1>4</h1>
+            </div>
+        </div>
+        <h1>align cross axis</h1>
+    </body>
+</html>
+-->
+
+<!--
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <style>
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+                border: 1px solid red;
+                padding: 1em;
+            }
+            nav ul li {
+                list-style: none;
+                padding: 0;
+                border: 1px solid blue;
+            }
+            .social {
+                display: inline;
+                padding: .4em;
+            }
+            .flex-item{
+                flex: 1;
+                text-align: center;
+            }
+            
+            @media only screen and (max-width: 1050px){
+                .flex-container{
+                    flex-wrap: wrap;
+                }
+                
+                .flex-item:last-child{
+                    flex: 1.5;
+                }
+            }
+            @media only screen and (max-width: 700px){
+                .flex-item{
+                    flex-basis: 40%;
+                    margin-bottom: 1em;
+                }
+                .flex-item:last-child{
+                    flex-basis: 100%;
+                    
+                }
+            }
+            @media only screen and (max-width: 400px){
+                .flex-item{
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <nav>
+                <ul class="flex-container">
+                    <li class="flex-item">item 1</li>
+                    <li class="flex-item">item 2</li>
+                    <li class="flex-item">item 3</li>
+                    <li class="flex-item">item 4</li>
+                    <ul class='flex-item'>
+                        <li class='social'>
+                            <a href='#'><i class='fa fa-twitter'></i></a>
+                        </li>
+                        <li class='social'>
+                            <a href='#'><i class='fa fa-twitter'></i></a>
+                        </li>
+                        <li class='social'>
+                            <a href='#'><i class='fa fa-twitter'></i></a>
+                        </li>
+                        <li class='social'>
+                            <a href='#'><i class='fa fa-twitter'></i></a>
+                        </li>
+                </ul>
+            </nav>
+        </div>
+    </body>
+</html>
+-->
+<!--
+<html>
+    <head>
+        <style>
+            .flex-container{
+                width: 80%;
+                height: 80%;
+                margin: 0 auto;
+                background: black;
+                color: white;
+                display: flex;
+            }
+            .flex-item{
+                margin: auto;
+            }
+        </style>
+    </head>
+    <div class="flex-container">
+        <div class="flex-item">
+            center me
+        </div>
+        
+    </div>
+</html>
+-->
+
+<!--
+<html>
+    <head>
+        <style>
+            .flex-container{
+                display: flex;
+                border: 2px solid black;
+                font-size: .6em;
+                justify-content: space-between;
+                flex-direction: row-reverse;
+                height: 55em;
+            }
+            .flex-item{
+                padding: 1em;
+                color: honeydew;
+            }
+            .flex-item:nth-child(1n){
+                background: red;
+            }
+            .flex-item:nth-child(2n){background: lightgreen;}
+            .flex-item:nth-child(2){order: -1;}
+            .flex-item:nth-child(3n){background: lightblue;}
+            .flex-item:nth-child(4n){background: yellow;}
+        </style>
+    </head>
+    <body>
+        <div class="flex-container">
+            <div class="flex-item">
+                <h1>flex item</h1>
+                <h1>1</h1>
+            </div>
+            <div class="flex-item">
+                <h1>flex item</h1>
+                <h1>2</h1>
+            </div>
+            <div class="flex-item">
+                <h1>flex item</h1>
+                <h1>3</h1>
+            </div>
+            <div class="flex-item">
+                <h1>flex item</h1>
+                <h1>4</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
+-->
+
+<!--
+<html>
+    <head>
+        <style>
+            #flex-container{
+                display: flex;
+                width: 80vw;
+                border: 1px solid black;
+                margin: 0 auto;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            .flex-item{
+                padding: 2em;
+                border: 1px solid blue;
+                text-align: center;
+            }
+            .flex-item ul{
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            .flex-item:nth-child(2){
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flex-container">
+            <div class="flex-item">
+                <h1>Cat</h1>
+                <h3>Som para</h3>
+                <ul>
+                    <li>feature 1</li>
+                    <li>feature 2</li>
+                    <li>feature 3</li>
+                </ul>
+                <h1>Free</h1>
+                <a href='#'>Really?</a>
+            </div>
+            <div class="flex-item">
+                <h1>Cat</h1>
+                <h3>Som para</h3>
+                <ul>
+                    <li>feature 1</li>
+                    <li>feature 2</li>
+                    <li>feature 3</li>
+                </ul>
+                <h1>Free</h1>
+                <a href='#'>Really?</a>
+            </div>
+            <div class="flex-item">
+                <h1>Cat</h1>
+                <h3>Som para</h3>
+                <ul>
+                    <li>feature 1</li>
+                    <li>feature 2</li>
+                    <li>feature 3</li>
+                </ul>
+                <h1>Free</h1>
+                <a href='#'>Really?</a>
+            </div>
+        </div>
+    </body>
+</html>
+-->
+
+
+
+DELETE ME
+
+
+      
+      
+
+
+
+
+
+ 
+ 
+
+questions
+
+<!-- star banner 
+<html>
+    <head>
+        <style></style>
+    </head>
+    <body>
+        <div id="target">
+            
+        </div>
+        
+        <script>
+            /*
+            var docFrag = document.createDocumentFragment();
+            var tableEle = document.createElement('table');
+            //tableEle.addProperty('id', 'star_table')
+            tableEle.id = 'star_table';
+            
+            docFrag.appendChild(tableEle);
+            var currTr = document.createElement('tr')
+            for (var i = 0; i < 100; i++){
+                // if i % 10 == 0 create tr
+                // add td
+                // add img to td
+                var img = document.createElement('img');
+                img.src = 'https://dom-tutorials.appspot.com/static/star_off.gif';
+                var td = document.createElement('td');
+                td.appendChild(img);
+                if (i > 9 && i % 10 == 0){
+                    tableEle.appendChild(currTr)
+                    currTr = document.createElement('tr');
+                }
+                currTr.appendChild(td);
+                
+            }
+            document.getElementById('target').appendChild(docFrag);
+            
+            document.getElementById('star_table').addEventListener('mouseover', function(e){
+                if(e.target.src)
+                    e.target.src = 'https://dom-tutorials.appspot.com/static/star_on.gif'
+            })
+            */
+            var tableFrag = document.createDocumentFragment();
+            
+            var tableEle = document.createElement('table');
+            
+            tableEle.id = 'star_table';
+            tableFrag.appendChild(tableEle);
+            var currRow = document.createElement('tr');
+            for (var i = 0; i < 100; i++){
+                let td = document.createElement('td');
+                let img = document.createElement('img');
+                img.src = 'https://dom-tutorials.appspot.com/static/star_off.gif';
+                td.appendChild(img);
+                
+                if (i > 9 && (i % 10 === 0)){
+                    tableEle.appendChild(currRow);
+                    currRow = document.createElement('tr')
+                }
+                currRow.append(td);
+            }
+            
+            document.getElementById('target').appendChild(tableFrag);
+            document.getElementById('star_table').addEventListener('mouseover', (e) => {
+                if(e.target.src)
+                    e.target.src = 'https://dom-tutorials.appspot.com/static/star_on.gif';
+            });
+        </script>
+    </body>
+</html>
+-->
+
+
+DONT DELETE BELOW
+NETTUTS
+ animated layout
+<html>
+    <head>
+        <style>
+            *{margin: 0;}
+            body {background: #eee;}
+            .wrapper {
+                width: 100%;
+                max-width: 960px;
+                margin: 0 auto;
+            }
+            nav {background: #333;}
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            nav a {
+                color: white;
+                 text-decoration: none;
+                text-align: center;
+                display: block;
+                padding: 10px;
+            }
+            nav a:hover {background: #555;}
+            
+            background-size: 80%;}
+            .social {max-width: 80%;}
+            
+            article {
+                background: white;
+                margin-bottom: 20px;
+                padding: 10px;
+                widows: 100%;
+                box-sizing: border-box;
+                flex: 0 1 30%;
+                transition: flex-basis 0.2s linear;
+            }
+            article h2{
+                text-align: center;
+            }
+            article.stack{
+                flex: 0 1 100%;
+            }
+            #blocks {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            @media screen and (min-width: 768px){
+                nav {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                nav ul{display: flex;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li><a href="#">HOme</a></li>
+                    <li><a href="#">HOme</a></li>
+                    <li><a href="#">HOme</a></li>
+                    <li><a href="#">HOme</a></li>
+                </ul>
+                <ul class="social">
+                    <li><a href="" class="fb"></a></li>
+                    <li><a href="" class="twitter"></a></li>
+                </ul>
+            </nav>
+            
+            <div>
+                <span>Layout</span>
+                <a href="#" class="stack">Stack</a>
+                <a href="#" class="grid">Grid</a>
+            </div>
+            <section id='blocks'>
+                <article>
+                <h2>I pity the fool...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>Get to the chopper...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>What's a horse doing on a spaceship...?</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>I pity the fool...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>Get to the chopper...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>What's a horse doing on a spaceship...?</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            </section>
+        </div>
+        
+        <script>
+            document.querySelector('a.stack').addEventListener('click', function(){
+                var ars = document.getElementsByTagName('article');
+                for (var i = 0; i < ars.length; i++)
+                    ars[i].classList.add('stack');
+            })
+            document.querySelector('a.grid').addEventListener('click',
+             function(){var ars = document.getElementsByTagName('article');
+                for (var i = 0; i < ars.length; i++)
+                    ars[i].classList.remove('stack');
+                
+            })
+        </script>
+    </body>
+</html>
+
+-->
+
+DONT DELETE BELOW
+
+<!-- SEARCHBOX
+<html>
+    <head>
+        <style>
+        
+        </style>
+    </head>
+    <body>
+        <form action="" class="search-form">
+            <input type="text" class="search" placeholder="city or state">
+            <ul class="suggestions">
+                <li>Filter for city</li>
+                <li>filter for state</li>
+            </ul>
+        </form>
+        
+        <script>
+        const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+        
+        var cities = [];
+        fetch(endpoint)
+            .then(blob => blob.json())
+            .then(data => cities.push(...data))
+        
+        function findMatches(word, cities){
+            return cities.filter(place => {
+                word = word.toLowerCase();
+                //place = place.toLowerCase();
+                return place.city.toLowerCase().indexOf(word) != -1 ||
+                    place.state.toLowerCase().indexOf(word) != -1;
+            })
+            
+        };
+        
+        function displayMatches(){
+            console.log("displaymatches")
+            const filteredArray = findMatches(this.value, cities);
+            const html = filteredArray.map(place => {
+                        return `
+                    <li>
+                    <span class='name'>${place.city},${place.state}</span>
+                    <span class='population'>${place.population}</span>
+                    <li>
+                    `
+            }).join('')
+            suggestions.innerHTML = html;
+        }
+            
+         let searchInput = document.querySelector('.search');
+        let suggestions = document.querySelector('.suggestions');
+            searchInput.addEventListener('change', displayMatches);
+            searchInput.addEventListener('keyup', displayMatches);
+        </script>
+    </body>
+</html>
+-->

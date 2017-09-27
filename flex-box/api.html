@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+       <h1 id="test"></h1>
+       <form action="" id="userform">
+           <input type="text" name="cityInput" placeholder="enter city name">
+           <input type="submit">
+       </form>
+        <div id="result">
+            
+        </div>
+        <script>
+            
+            /* code for api requests
+            $('#test').html("Hello world");
+             $.get(getUrl("kansas")).then(function(result){
+                console.log("result " , result.name);// display result
+                 // if callback successfule
+                return $.get(getUrl("dubai"));//perform another request
+            }).then(function(result2){
+                console.log("result2 " , result2);
+                return $.get(getUrl("california")) // perform another request
+            }).then(function(result3){
+                console.log("result3 " , result3); // perform another request
+                $("#test").html(result3.name);
+                window.cityName = result3.name;
+            }).fail(function(e) {
+                cityName = "Not a valid city"
+                $('#test').html("error"); // display that error has occured
+                alert('woops'); //error failed
+            });
+            */
+            
+            $('#test').html("Hello world");
+            var cityName = "default";
+            const getUrl = (cityName) => {
+                return "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=bd161b738f31b651c5cb761a7c5f88a9"
+            }
+            document.getElementById("userform").addEventListener("submit", function(e){
+                e.preventDefault();
+                let cityName = (this.cityInput.value);
+                $.get(getUrl(cityName)).then(function(result){
+                    console.log("result " , result.name);// display result
+                     // if callback successfule
+                    $("#result").html(result.name) // you can display other information as well.
+                    return $.get(getUrl("dubai"));//perform another request
+                }).then(function(result2){
+                    console.log("result2 " , result2);
+                    return $.get(getUrl("california")) // perform another request
+                }).then(function(result3){
+                    console.log("result3 " , result3); // perform another request
+                    $("#test").html(result3.name);
+                    window.cityName = result3.name;
+                }).fail(function(e) {
+                    cityName = "Not a valid city"
+                    $('#test').html("error");
+                    alert('woops'); //error failed
+                });
+            })
+            
+           
+        </script>
+    </body>
+    
+</html>

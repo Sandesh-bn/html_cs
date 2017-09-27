@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<!-- This start file was build by Paul Cheney  -->
+<title>HTML5 Start Site by Paul Cheney</title>
+
+<!-- TELLS PHONES NOT TO LIE ABOUT THEIR WIDTH & stops the font from enlarging whena phone is turned sideways-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<!-- LOAD THE LATEST VERSION OF JQUERY-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".nav-button").click(function(){
+            $(".nav-button,.primary-nav").toggleClass("open");
+        })
+    })
+</script>
+
+<!----- STYLE SHEETS ----->
+<link href="css/reset.css" rel="stylesheet">
+<!-- phone-default -->
+<link href="css/phone-default.css" rel="stylesheet">
+<!-- enhance-tablet -->
+<link href="css/tablet.css" rel="stylesheet">
+<!-- enhance-desktop -->
+<link href="css/desktop.css" rel="stylesheet">
+<link href="css/mobilemenu.css" rel='stylesheet'>
+
+<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+     
+</head>
+<body>
+	
+    <div id='headerWrapper'>
+	<header>
+    <div class="search">
+        <form>
+            <input type='text' name='search' value='search..'/>
+        </form>    
+    </div>
+    <img src='logo.png'/>
+        <hgroup>
+            <h1>Cafe news</h1>
+            <h2>We never eat our own words</h2>
+        </hgroup>
+    </header>
+    </div><!-- end of wrapper -->
+    
+    
+    <!-- page navigation links here -->
+    <div id='navWrapper'>
+    <nav>
+    <ul class='primary-nav'>
+    	<li class='parent'><a href="#">One</a>
+            <ul>
+                <li><a href="#">A</a></li>
+                <li><a href="#">B</a></li>
+                <li><a href="#">C</a></li>
+            </ul>
+        </li>
+    	<li class='parent'><a href="#">Two</a>
+            <ul>
+                <li><a href="#">My way</a></li>
+                <li><a href="#">Highway</a></li>
+            </ul>
+        </li>
+    	<li class='parent'><a href="#">Three</a>
+            <ul>
+                <li><a href="#">Three1</a></li>
+                <li><a href="#">Three2</a></li>
+                <li><a href="#">Three3</a></li>
+            </ul>
+        </li>
+        <li class='parent'><a href="#">Four</a>
+            <ul>
+                <li class="current"><a href="index.html">Best beaches</a></li>
+                <li><a href="index.html">Best hotels</a></li>
+            </ul>
+        </li>
+    </ul>
+        hello
+        <button class="nav-button">Toggle Navigation</button>
+    </nav>
+    </div>
+    
+    <div id='contentWrapper'>
+    <!-- page content here -->
+    <div id="content">
+    <h1>Page Name</h1>
+    <p>Content for this page.</p>
+    </div><!-- end content -->
+    </div>
+    
+    <div id='footerWrapper'>
+    <footer>
+    <p style='color:red;'>&copy; Paul Cheney &bull; Responsive Start File</p>
+    </footer>
+    </div>
+    
+</body>
+</html>

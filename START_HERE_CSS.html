@@ -1,0 +1,956 @@
+<html>
+  <head>
+    <style>
+      /* 1
+      div > p -> all first level children nested under div. not grand children
+      div > p {
+        color: blue;
+      }
+      */
+
+      /* 2
+      pseudoe classes
+      link: unvisited
+      visited: visited
+      hover: onmouseover
+      active: clicked
+      a:link {
+          color: #FF0000;
+      }
+
+
+      a:visited {
+          color: #00FF00;
+      }
+
+
+      a:hover {
+          color: #FF00FF;
+      }
+
+
+      a:active {
+          color: #0000FF;
+      }
+      focus vs active:  https://stackoverflow.com/questions/1677990/what-is-the-difference-between-focus-and-active
+      focus is when we press tab and focus on a button.
+      active is when you actually click the button.
+      although when you click a button. you trigger focus&active state.
+      but they are not the same
+      */
+
+      /*rounded corners */
+      div.box {
+        background: #999;
+        float: left;
+        height: 150px;
+        margin: 30px;
+        width: 150px;
+      }
+      .all-corners {
+        border-radius: 20px;
+      }
+      /* vendor prefixes are added to css features that are still in experimental stage */
+      .one-corner{
+        -moz-border-top-radius-topleft: 75px;
+        -webkit-border-top-left-radius: 75px;
+        border-top-left-radius: 75px;
+      }
+      .elliptical-corners {
+        border-radius: 40px / 20px;
+      }
+      .circle{
+        border-radius: 75px;
+      }
+      article.about > p{
+        color: red;
+      }
+      #pink25{
+        background: rgba(89,0,127,0.75);
+        color: yellow;
+      }
+      #pink80{
+        background: rgba(89,0,127,0.20);
+        color: yellow;
+      }
+      ol {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- if you apply color to para even the em and small will get the color since they are nested inside -->
+    <p>This is para<em>This is em</em><small>This is small</small></p>
+    <!-- the more spcific rule always wins. if they have equal specificty. the rule that is poistioned the last wins
+    Conflicting styles applied in an embedded style sheet override those in external style
+    sheets if—and only if—the style element comes after the link element.
+    inline styles takes precedence over all style rules.
+    If there is a style tag and linK(external style) then the position of the two tags determine which style will win.
+    if style tag occurs last. then rule in style tag wins.
+    rule with !important has the highest precedence. Avoid this.
+    -->
+
+    <!-- media rules. we can apply stylesheets specific to media: printing, screen, all, handheld, braille, tty, tv
+      <link rel='stylesheet' href='link' media='screen/printing' />
+    -->
+
+    <!-- multiple stylesheet themes.
+      . To designate the style sheet that should
+      be used as a base, regardless of the
+      visitor’s preferences, use the simple
+      syntax described in “Linking to External
+      Style Sheets,” with no title.
+      2. To designate the style sheet that should
+      be offered as a first choice, but that can
+      be deactivated by another choice, add
+      title="label" to the link element,
+      where label identifies the preferred
+      style sheet.
+      3. To designate a style sheet that should
+      be offered as an alternate choice,
+      use rel="alternate stylesheet"
+      title="label" in the link element,
+      where label identifies the alternate
+      style sheet.
+    -->
+
+
+    <p id="pink25">This is 25% transparent background purple</p>
+    <p id="pink80">This is 80% transparent background purple</p>
+
+    <!-- 1
+      <div>
+        <p>first</p>
+        <h1>heading</h1>
+        <section><p>nested para grand children</p></section>
+        <div><p>p nested inside div</p></div>
+        <p>last para</p>
+      </div>
+    -->
+
+    <!-- adjacent sibling
+        elements at the same level are siblings.
+        siblings that are adjacent are adjacent  siblings.
+        h1 and p are adjacent sibling.
+        p and h2 are adjacent sibling
+        h1 and h2 are NOT adjacent siblings.
+        But h1, p and h2 are all siblings.
+        <body>
+          <h1> ... </h1>
+          <p> ... </p>
+          <h2> ... </h2>
+        </body>
+    -->
+
+
+    <article class="about">
+      <h1>Antoni Gaudí</h1>
+      <p>Many tourists are drawn to Barcelona to see Antoni Gaudí's incredible architecture.</p>
+       <p>Barcelona <a href="http://www.gaudi2002.bcn.es/english/" rel="external">celebrated the 150thanniversary</a> of Gaudí's birth in 2002.</p>
+      <section class="project">
+        <h2 lang="es">La Casa Milà</h2>
+         <p>Gaudí's work was essentially useful. <span lang="es">La Casa Milà</span> is an apartment building and <em>real people</em> live there.</p>
+      </section>
+      <section class="project">
+        <h2 lang="es">La Sagrada Família</h2>
+         <p>The complicatedly named and curiously unfinished Expiatory Temple of the Sacred Family is the <em>most visited</em> building in Barcelona.</p>
+      </section>
+      <p>para</p>
+    </article>
+
+    <!-- Since the way weights are defined varies
+        from font to font, the predefined values may
+        not be relative from font to font. They are
+        designed to be relative within a given font
+        family.
+        If the font family has fewer than nine
+        weights, or if they are concentrated on one
+        end of the scale, some numeric values will cor-
+        respond to the same font weight.
+        For the reasons noted in the previ-
+        ous two tips, it’s customary to assign bold
+        simply with font-weight: bold, which will
+        always work.
+    -->
+    <h1 style="font-weight:100;">100 level font</h1>
+    <h1 style="font-weight:400;">400 level font</h1>
+    <h1 style="font-weight:900;">900 level font</h1>
+
+    <!-- FONT SIZE
+      There are two basic ways to set the font
+      size for the text in your Web page. You can
+      mandate that a specific size be used A,
+      or you can have the size be relative to the
+      element’s parent font size C.
+      Setting the size relative to the parent takes
+      a little getting used to; you need to under-
+      stand how the browser treats these units
+      relative to their parents, and I’ll explain that
+      more in a minute.
+      But first, when you use this method
+      it’s best to establish a baseline on the
+      body element, namely by declaring
+      body { font-size: 100%; } C. Most of the
+      time, this sets the size to the equivalent of
+      16px, which is the default font size on most
+      systems. As usual, that value cascades
+      down to the other elements (remember,
+      font-size is an inherited property) unless
+      given their own font-size.
+
+      If you set the font size with pixels,
+      visitors using Internet Explorer will not be
+      able to make the text bigger or smaller with
+      the browser’s text size option. That’s one
+      argument for sizing your fonts with ems or
+      percentages. Beginning with IE7, visitors can
+      zoom the entire page in and out, which is
+      an improvement over IE6, though it isn’t the
+      same as changing only the text size.
+
+      CSS3 introduces some new units. One of
+      the most interesting ones is rem, short for root
+      em. It’s like em, but it sizes everything relative
+      to the root, so you don’t have to do the parent
+      element font size division I described for ems.
+      Browser support is strong in modern browsers.
+      Internet Explorer didn’t support it until version 9
+    -->
+
+    <!-- Line height
+      amount of space between each line a paragraph.
+      line-height: n; // n times font-size for the element
+      line-height: a ems;
+      line-height: p %;
+
+      n will be inherited by all children. so if parent's font size is 16 then line height
+      will be 24.(16 * 1.5). if child's font size is 10. It's line height will be 15.
+    -->
+    <p style="line-height:2;">Line height 2n</p>
+    <p style="line-height:3;">Line height 3n</p>
+    <p style="line-height:4;">Line height 4n</p>
+
+    <!-- word-spacing space bw words letter-spacing space bw letters
+      word-spacing: len;
+      letter-spacing: len;
+       len is in px or em
+       If you use an em value, only the resulting
+      size (or “computed value”) is inherited. So, a
+      parent at 16 pixels with .1em of extra word-
+      spacing will have 1.6 pixels of extra space
+      between each word. And all child elements will
+      also have 1.6 pixels of extra space between
+      words, regardless of their font size. Set the
+      extra spacing explicitly for the child elements
+      if you need to override such a value.
+      The word-spacing and letter-
+      spacing properties are inherited.
+    -->
+    <p>para with NO word spacing</p>
+    <p style="word-spacing:1px;">para with word spacing 1px </p>
+    <p style="word-spacing:2px;">para with word spacing 2px </p>
+    <p style="word-spacing:5px;">para with word spacing 5px </p>
+    <p style="word-spacing:1em;">para with word spacing 1em </p>
+    <p style="word-spacing:2em;">para with word spacing 2em </p>
+    <p style="word-spacing:5em;">para with word spacing 5em </p>
+
+    <p>para with NO letter spacing</p>
+    <p style="letter-spacing:1px;">para with letter spacing 1px </p>
+    <p style="letter-spacing:2px;">para with letter spacing 2px </p>
+    <p style="letter-spacing:5px;">para with letter spacing 5px </p>
+    <p style="letter-spacing:1em;">para with letter spacing 1em </p>
+    <p style="letter-spacing:2em;">para with letter spacing 2em </p>
+    <p style="letter-spacing:5em;">para with letter spacing 5em </p>
+
+    <!-- indent spacing that should preced the first line -->
+    <p>No indent</p>
+    <p style='text-indent:1em;'>text indent of 1em</p>
+    <p style='text-indent:5em;'>text indent of 5em</p>
+    <p style='text-indent:2px;'>text indent of 2px</p>
+    <p style='text-indent:10px;'>text indent of 10px</p>
+
+    <!-- white-space
+        pre  retain multiple spaces
+        nowrap treat all spaces as non-breaking
+        normal display multiple spaces as one space
+    -->
+    <p style="white-space:pre">A text             with white-space: pre </p>
+    <p style="white-space:nowrap">A text             with white-space: nowrap. this willl prevent lines from wrapping. </p>
+    <p style="white-space:normal">A text             with white-space: normal </p>
+
+    <!-- text transform
+      text-transform is inherited
+    -->
+    <p style="text-transform:capitalize">Barcelona's architecture text-transform:captialize</p>
+    <p style="text-transform:uppercase">Barcelona's architecture text-transform:uppercase</p>
+    <p style="text-transform:lowercase">Barcelona's architecture text-transform:lower</p>
+
+    <p style="text-decoration:underline">text-decoration:underline</p>
+    <p style="text-decoration:overline">text-decoration:overline</p>
+    <p style="text-decoration:line-through">text-decoration:line-through</p>
+
+    <!-- styling links
+    In most cases, you’ll probably have a generic a style,
+    :visited, and :hover styles
+    in your style sheets. For maximum design control you may want to style all the dif-
+    ferent states. But for that to work, you must specify the links in a particular order:
+    link, visited, hover, and active. Use this easy mnemonic to remember it: Love/
+    HAte. So here’s the proper way to add all four link styles:
+    a:link { color: #F60; }
+    a:visited { color: #900; }
+    a:hover { color: #F33; }
+    a:active {color: #B2F511; }
+
+    If you want to get really fancy with your CSS, you can combine the attribute selector with the CSS3
+:not() selector to create a single style that will affect all absolute URLs
+except
+ones pointing to your own site:
+a[href^='http://']:not(a[href^='http://www.mysite.com'])
+This crazy-looking selector translates to “select all links that begin with
+http://
+, but
+not
+the ones that begin with
+http://www.mysite.com.” The downside of this technique is that Internet Explorer 8 and earlier don’t understand
+the :not() selector.
+
+a[href^='mailto:'] email links
+a[href$='.zip']: zip link
+a[href$='.pdf']: pdf links
+
+    -->
+    <!-- Layout
+          A fixed layout has pixel-based widths
+      for the whole page and for each column
+      of content. As its name suggests, its
+      width doesn’t change when viewed
+      on smaller devices like mobile phones
+      and tablets or when a desktop browser
+      window is reduced. Chances are you’ve
+      seen many fixed layouts when browsing
+      the Web, particularly on corporate and
+      big-brand sites. Fixed layouts are also
+      the easiest to get the hang of when
+      learning CSS.
+
+      n	 A fluid (or liquid) layout uses percent-
+      ages for widths, allowing the page to
+      shrink and expand depending on the
+      viewing conditions. This approach
+      has been enhanced of late to create
+      responsive and adaptive layouts, which
+      can not only shrink for phones and  tablets like traditional fluid layouts, but
+      also shift their design in specific ways
+      based on the screen size. This allows for
+      tailoring the experience to mobile, tab-
+      let, and desktop users independently,
+      but with the same HTML, not with three
+      different sites.
+
+      An elastic layout uses ems for both
+      width and all other property sizes, so
+      the page scales according to a user’s
+      font-size settings.
+    -->
+
+    <!-- Layout recipe
+      divide content into :
+        article: main content
+        nav:
+        section:
+        aside: can nest sidebar, secondary list of article, advertising
+        header: masthead, logo, slogan, search form, main navigation
+        footer: about, copyright, faq, privacy, legal, sitemap
+        div: used to apply design and wrap the page
+          main div:
+          sidebar div: archive links
+        put your content in the order most important to least
+        masthead
+        main content
+        sidebars
+        footer:
+
+    -->
+    <!-- supporting html5 elements in older browsers
+      include html5.js(from googlecode) in the header after all other link-style tags
+          There is one drawback to this approach
+      and these alternative options. Because
+      styling HTML5 elements in IE6 through IE8
+      requires JavaScript, users whose browsers
+      don’t support JavaScript or have it dis-
+      abled will see unstyled and possibly messy
+      HTML5 elements. You might be OK with
+      this risk if it’s one of your own sites; many
+      designers and developers are. However,
+      if you're doing work for a client, you may
+      want to get their clearance before you use
+      the HTML5 elements that are intended to
+      display as blocks. They may also have user
+      analytics concerning browser usage to
+      inform the decision.
+    -->
+    <!-- use css normalizer which will make the default style consistent across all browsers -->
+
+    <!-- box model
+        css treats every element as a boxx.
+        box has width, height, border, padding and margin
+        box is made of container.
+        space surrounding container is padding
+        outside edge of padding is border-top
+        space between border and adjacent elements is margin-bottom
+
+        normal document flow: elements are laid in the order
+        they are coded with each blcok level element occupying its own line.
+
+        you cannot set width or height for inline elments unless you set its display
+        to inline block or display block
+
+        widht and height are not inherited.
+      -->
+
+      <!-- units of  measurement
+        % is relative to parent's size and not the element itself
+
+      -->
+
+      <!-- always use min-height over height
+      However, if you always want the element to be at least a certain height, set a min-height. If the
+      content later grows, the element’s height will grow automatically as desired. That is the difference
+      between height and min-height, as well as width and min-width.
+      And in case you’re wondering, there are a variety of reasons content might grow. Your content
+      might come from a database or a feed or be user-generated. Also, your visitor may increase the
+      font size in his or her browser, overriding the style you specified.
+      -->
+
+      <!-- responsive desing
+        media query: enhance media type allowing you to target styles to specific device features
+
+      -->
+
+      <!-- fonts
+      free fonts
+      Font Squirrel (www.fontsquirrel.com)
+    	 MyFonts (http://myfonts.com)
+    	 The League of Moveable Type (www.
+      theleagueofmoveabletype.com)
+       FontShop (www.fontshop.com)
+
+       All of those fonts need to be downloaded
+        to the user’s computer before they can be
+        rendered on the page. If you have half a
+        dozen fonts on a page, this can slow down
+        the Web site, especially for mobile users.
+        My recommendation to you is to be pru-
+        dent with your Web font choices. If you find
+        yourself using seven Web fonts, then look
+        for ways to consolidate your font choices.
+        One way to save some page weight is
+        through subsetting. Subsetting is a way
+        to trim down the size of the actual font by
+        only including the characters you know
+        you will use. For instance, if you are using
+        League Gothic for headlines, but the
+        design of the site requires that the head-
+        lines are always in all caps, then there is no
+        need for lowercase letters. Using subset-
+        ting, you can remove those letters from the
+        font, and the font’s file size will be measur-
+        ably smaller.
+      -->
+
+      <!--
+      Typically implemented using JavaScript,
+      polyfills enable a degree of support for
+      HTML5 and CSS3 APIs and properties in
+      less-capable browsers while silently falling
+      back to official support when the capabili-
+      ties exist natively in a browser. It’s impor-
+      tant to note that these generally incur a
+      performance penalty, because JavaScript
+      is measurably slower in less-capable Web
+      browsers (particularly in older versions of
+      Internet Explorer).
+      You can find a community-managed
+      list of useful JavaScript polyfills at GitHub
+      (https://github.com/Modernizr/Modernizr/wiki/
+      HTML5-Cross-Browser-Polyfills) D, as part
+      of the Modernizr project. The ones listed in
+      the “CSS3 Styles” section will be of particu-
+      lar interest, especially Jason Johnston’s PIE
+      (www.css3pie.com),
+      -->
+
+      <div class="all-corners box"></div>
+      <div class="one-corner box"></div>
+      <div class="elliptical-corners box"></div>
+      <div class="circle box"></div>
+      <br/>
+      <br/>
+      <div>
+        <ol >
+          <li style="list-style-type:disc;">First item</li>
+          <li style="list-style-type:square;">Second idtem</li>
+          <li style="list-style-type:decimal;">third item </li>
+          <li style="list-style-type:upper-alpha;">fourth item</li>
+          <li style="list-style-type:lower-alpha;">fourth item</li>
+        </ol>
+      </div>
+
+      <!-- focus is activated when user clicks on the field, clicks on label, touches the field/label,
+      tabs into the field. blur is activated once it loses focues
+      Form controls with the disabled attribute aren’t submitted along with the form so
+      their values will be inaccessible to your form processing code on the server side. If
+      you want a form value that users are unable to edit but can still see and submit, use
+      the readonly attribute.
+      The readonly Attribute
+      The readonly attribute is similar to the disabled attribute: it makes it impossible
+      for the user to edit the form field. Unlike disabled, however, the field can receive
+      focus and its value is submitted with the form.
+      you can make submit button blurred until all the required field is submitted.
+
+      In order to disable autocomplete on a form control (or form), use autocomplete="off". This
+      is a good idea for sensitive information, such as a credit card number, or data that
+      will never need to be reused, such as a CAPTCHA.`
+
+      The number input has min, max, and step attributes to specify the minimum, max-
+      imum, and incremental values allowed. If the step is omitted it defaults to 1. If you
+      would like to allow float values, you must specify a float step, such as 0.1 or the
+      keyword any to allow for any value. Note that some browsers will minimize the
+      width of the number form field for restricted numbers. For example, min="0"
+      max="10" step="1" doesn't need to be as wide as step="any", where the user could
+      enter the full value of Pi.
+     -->
+
+     <!--
+     But polyfills aren’t perfect. Some rely on other technologies that may be only partly
+     supported. For example, one polyfill allows you to emulate the HTML5 canvas on
+     old versions of Internet Explorer using the Silverlight plug-in. But if the web visitor
+     isn’t willing or able to install Silverlight, then you need to fall back on something
+     else. Other polyfills may have fewer features than the real HTML5 feature, or poorer
+     performance.
+
+       Accessibility. One of the key themes of modern web design is making
+     acces-
+     sible
+      pages—that is, pages that people can navigate using screen readers and
+     other assistive tool
+
+     modernizr already has html-shiv
+     html-shiv just uses js to create all the new semantic elements and makes it block level so that it is supportd in all older browsers
+     semantic html
+     improves accesibility
+     easier to understand
+     seo
+
+     A <section> is slightly
+     more specific than a <div>—it’s suitable for any block of content that starts
+     with a heading.
+
+     you can’t style validation messages, you can change the appearance of
+     the input fields based on whether or not they’re validated. For example, you can
+     give invalid values a different background color, which will appear in the text box
+     as soon as the browser detects the problem.
+
+     For example, if you want to give required <input> fields a light-yellow background,
+     you could use a style rule with the required pseudo-class:
+     input:required {
+       background-color: lightyellow;
+     }
+     Or, you might want to highlight only those fields that are required and currently
+     hold invalid values by combining the required and invalid pseudo-classes like this:
+     input:required:invalid {
+       background-color: lightyellow;
+     }
+
+     With this setting, blank fields are automatically highlighted, because they break the
+required-field rule.
+     -->
+      <form method="post" >
+        <fieldset>
+          <h2 class="accoutn">Account</h2>
+          <ul>
+            <li>
+              <label for="first_name">First Name:</label>
+              <input type="text" id="first_name"
+              required="required" placeholder="Enter first name"/>
+            </li>
+            <li>
+              <label for="last_name">Last name: </label>
+              <input type='text' id="last_name" name="last_name"/>
+
+            </li>
+          </ul>
+
+        </fieldset>
+        <fieldset>
+          <ul>
+            <li>
+              <input type='radio' id='gender_male'
+               name='gender' value='male'/>
+               <label for='gender_male'>male</label
+            </li>
+            <li>
+              <input type='radio' id='gender_female'
+                name='gender' value='female'/>
+              <label for='gender_female'>Female</label>
+            </li>
+            </ul>
+            <label for='referral'>Where did you find out</label>
+            <select id='referral' name='referral'>
+              <optgroup label='Online'>
+                <option value='social_network'>Social network</option>
+                <option value="search_engine">Search engine</option>
+              </optgroup>
+              <optgroup label="off-line">
+                <option value="postcard">Postcard</option>
+                <option value="word_of_mouth">Word of mouth</option>
+              </optgroup>
+            </select>
+              <input type='checkbox'
+               id='email_ok' name='email_signup'
+               value='user_emails'/>
+                <label for='email_ok_msg_from_users'>
+                  It is okay to email me with messages from users.
+                </label>
+                <datalist id="animalChoices">
+                  <option label="Alpaca" value="alpaca">
+                   <option label="Zebra" value="zebra">
+                   <option label="Cat" value="cat">
+                   <option label="Caribou" value="caribou">
+                   <option label="Caterpillar" value="caterpillar">
+                   <option label="Anaconda" value="anaconda">
+                   <option label="Human" value="human">
+                   <option label="Elephant" value="elephant">
+                   <option label="Wildebeest" value="wildebeest">
+                   <option label="Pigeon" value="pigeon">
+                   <option label="Crab" value="crab">
+                </datalist>
+              <textarea name='bio' rows='5' cols='40'></textarea><br/>
+
+
+      </form>
+
+      <!-- DATALIST autosuggestion box, can be on its won. more appropriate to include it inside form-->
+      <!-- video
+      use mp4 and ogg/webm to run on all browser
+      use miro, firefogg, handbrake to convert videos.
+      Mobile browsers have their own quirks. Some don’t support features like autoplay
+      and looping, because these features can drain batteries and use up valuable band-
+      width. But even if you don’t plan to use these features, mobile devices need special
+      consideration to ensure good video playback performance and to minimize data
+      -->
+
+      <!--
+        use prefix-tree to autotmatically add vendor prefixes
+      -->
+
+      <!-- transparency
+        Browsers that don’t support rgba() will just ignore this rule, and the element will
+        keep its default, completely transparent background. So the second, and better,
+        approach is to start by declaring a solid fallback color, and then replace that color
+        with a semitransparent one:
+        .semitransparentBox {
+          background: rgb(170,240,0);
+          background: rgba(170,240,0,0.5);
+        }
+        This way, browsers that don’t support the rgba() function will still color the element’s
+        background, just without the transparency.
+
+        The opacity property is a better tool than the rgba() function if you want to do any
+        of the following:
+        •  Make more than one color semitransparent. With opacity, the background color,
+        text color, and border color of an element can become transparent.
+        •  Make something semitransparent, even if you don’t know its color (for example,
+        because it might be set by another style sheet or in JavaScript code).
+        •  Make an image semitransparent.
+        •  Use a transition, an animated effect that can make an element fade away or
+        reappear
+        SO DO THIS INSTEAD
+        .semitransparentBox {
+          background: rgb(170,240,0);
+          opacity: 0.5;
+        }
+      -->
+
+      <!-- @font-face
+        You upload the font to your website (or, more likely, multiple versions of that
+        font to support different browsers).
+        2.  You register each font-face you want to use in your style sheet, using the
+        @font-face command.
+        3.  You use the registered font in your styles, by name, just as you use the web-
+        safe fonts.
+        4.  When a browser encounters a style sheet that uses a web font, it downloads
+        the font to its temporary cache of pages and pictures. It then uses that font
+        for just your page or website (Figure 6-13). If other web pages want to use the
+        same font, they’ll need to register it themselves and provide their own font files.
+
+        If you want to use the @font-face feature and support a wide range
+        of browsers, you need to distribute your font in several different formats. The best
+        practice is to include a WOFF file (for optimum performance on modern browsers),
+        an EOT file (to fill in the gaps on old versions of IE), and a TTF or OTF file
+
+        // eot works inly in ie
+        // woff is compressed version oof TrueType and OPen type fonts
+      -->
+
+      <!--
+        :before add content before an element that matches the selector
+        .quote:before {
+        content: 'Hot Tip!';
+
+      }
+        :selection change color/background when you select using your mouse.
+
+        attribute selector
+        img[title] only images with title text-align
+
+        a[href='www.homepage.com'] {
+        color: green;
+        font-weight: bold;
+      }
+
+      a[href^='http://']: link that begins with 'http://'
+      a[href$='.pdf']: link that ends with 'pdf'
+      img[src*='headshot']: chooses adams_headshot.png, amy_headshot.jpg, headshot.gif
+
+      body > h2  chooses all h2 nested under body. doesnt choose body > div > h2
+      body h2 chooses any h2 nested under body. no matter how deep
+
+      h1:first-child  choose any h1 if it is the first child of it's parent
+
+      set alternating colors for table rows
+      tr:nth-child(odd) { background-color: #D9F0FF; }
+      tr:nth-child(even) { background-color: #FFFFFF; }
+
+      .sidebar p:first-of-type : the first para under .sidebar
+
+      :nth-of-type
+      Works like :nth-child() but it applies to alternating children that have a specific tag.
+      You may find this selector handy if you have something like a big paragraph of text
+      that’s peppered with photos. The <img> tag is an inline tag, so you can have a <p>
+      tag with a bunch of <image> tags inside it. And say you want to alternately float the
+      images left and right, as shown in Figure 3-9. You can do so with these two styles:
+      img:nth-of-type(odd) { float: left; }
+      img:nth-of-type(even) { float: right; }
+
+      The adjacent sibling selector uses a plus sign (+) to join one element to the next. So
+      to select every paragraph following each <h2> tag, use this selector: h2 + p (spaces
+      are optional, so h2+p works as well). The last element in the selector (p, in this case)
+      is what gets the formatting, but only when it’s directly after its brother <h2>.
+
+      :not  use to exclude
+      p:not(.classy){}   all para without class='classy'
+      a[href^="http://"]:not([href^="http://mysite.com"])  all links outside of mysite.com
+      You can’t string multiple :not() selectors together. For example, the following is invalid:
+      a[href^="http://"]:not([href*="google.com"]):not([href="yahoo.com])
+      In other words, you can only use :not( ) once with a selector.
+
+      Inheritance works through multiple generations as well. If a tag like the <em> or
+      <strong> tag appears inside of a <p> tag, then the <em> and the <strong> tags also
+      inherit properties from any style applied to the <body> tag.
+
+      -->
+
+      <!-- font size percentage, em
+
+        Like keywords, percentage values adjust text in relationship to the font size defined
+        by the browser, but they give you much finer control than just large
+        ,
+        x-large, and
+        so on. Every browser has a pre-programmed base text size, which in most browsers
+        is 16 pixels. You can adjust this base size in your browser’s preferences. Whatever
+        setting has been chosen, the base text size for a particular browser is equivalent to
+        100%. In other words, for most browsers, setting the CSS percentage to 100% is the
+        same as setting it to 16 pixels.
+        Say you want to make a particular headline appear two times the size of average
+        text on a page. You simply set the font size to 200%, like so:
+        font-size: 200%;
+        Or, when you want the text to be slightly smaller than the default size, use a value
+        like 90% to shrink the font size down a bit.
+        The above examples are pretty straightforward, but here’s where it gets a little tricky:
+        Font size is an inherited property (see Chapter 4), meaning that any tags inside of a
+        tag that has a font size specified inherit that font size. So the exact size of 100% can
+        change if a tag inherits a font-size value.
+
+        there’s a <div> tag that has its font
+        size set to 200%. That’s two times the browser’s base text size, or 32 pixels. All tags
+        inside that <div> inherit that text size and use it as the basis for calculating their
+        text sizes. In other words, for tags inside that <div>, 100% is 32 pixels. So the <h1>
+        tag inside the <div> that has a font size of 100% displays at two times the base-text
+      -->
+
+      <!-- rem font size
+
+        It stands
+        for Root EM—meaning its value is based on the text size of
+        the root element. In most cases this just means the base text
+        size, so you can change the .75em shown in Figure 6-11 to this:
+        font-size: .75rem;
+        This style makes the font size .75 of the base text size, not the
+        current font size (as is the case with ems). The root element in
+        HTML is actually the html element you find at the beginning
+        of a web page. When using rem values, you can set the base
+        text size of the html element and then use rem units to set
+        text to a size relative to that. For example, you can set the base
+        text size to 20 pixels like this:
+        html {
+         font-size: 20px;
+        }
+        Then use rem units to create fonts in relation to that 20-pixel
+        base text size. For example, to then make all paragraphs 15
+        pixels in size, add this style.
+        p {
+         font-size: .75rem;
+        }
+        You should be aware, however, that while most browsers now
+        understand the rem unit, Internet Explorer 8 and earlier don’
+      -->
+
+      <!--
+      Pixels are simple to understand and easy to use. They also create
+an exact width or height that doesn’t change.
+      . An em is the same as the text size for
+the styled element. Say you set the text size to 24px; an em for that style is 24px,
+so if you set the width to 2em, then it would be 2 x 24 or 48 pixels. I
+
+For the width property, percentage values are based on the percentage of the
+width of the style’s containing element. If you set the width of a headline to 75%
+and that headline isn’t inside any other elements with a set width, then the headline
+will be 75 percent of the width of the browser window. If the visitor adjusts the size
+of his browser, then the width of the headline will change. However, if the headline
+is contained inside a <div> (maybe to create a column) that’s 200 pixels wide, the
+width of that headline will be 150 pixels. Percentage values for the height property
+work similarly, but are based on the containing element’s height, instead of width.
+
+
+The general rule of thumb for setting heights on page elements is
+don’t!
+ A lot of bud-
+ding CSS designers try to set heights on everything in an attempt to get pixel-perfect
+control. But unless you’re totally sure of the exact dimensions of the content inside
+a tag, you can run into some unwanted results (see Figure 7-13). In this example, a
+pull-quote box used to highlight an interesting comment from an article has a set
+width and height of 100 pixels. When more text than fits into the 100-pixel height is
+added to the box, its contents spill out the bottom. Even if you make sure that the
+text you put inside a box with a fixed height fits, if a visitor increases the font size
+in her browser, the text might resize to a height larger than the box.
+In other words, the height property is useful for controlling the height of a div
+containing images, for example, because you can correctly determine the height of
+the images; however, if you use the height for elements that have text, make sure to
+not only test your pages in the major browsers, but also test the page with different
+font sizes by increasing the font size in the web browser.
+
+When using percentages with multiple columns, you can run into some weird prob-
+lems. Say you have two columns (really, two tags, such as <div> tags), and you want
+each to be 50 percent of the width of the window. So you set the two columns to
+a width of 50%; however, the moment you add padding or a border to one of the
+columns, you’ll increase its width to more than 50% (to be exact, it will be 50% plus
+the amount of left and right padding and the width of the left and right borders). In
+most cases, this will force the second column to drop
+below
+ the first.
+ you can use box-sizing property to eradicate this problem.
+ •	 The content-box option is the way browsers have always defined the screen
+width and height of an element, as described on page 213. That is, the browser
+adds the border widths and padding thicknesses to the values set for the width
+and height properties to determine the tag’s onscreen width and height. Since
+this is the default behavior, you don’t need to specify anything for content-box.
+•	 The padding-box option tells a browser that when you set a style’s width or
+height property, it should include the padding as part of that value. For ex-
+ample, say you give an element 20 pixels of left and right padding and set the
+width of the element to 100 pixels. The browser will consider the padding part
+of that 100-pixel value. In other words, the content area will be only 60 pixels
+wide (100 – 20 [left padding] – 20 [right padding]).
+•	 The border-box value includes both the padding and the border thickness as
+part of the width and height values. This setting solves the problem of using
+percentage values for widths discussed above. In other words, with the box-
+sizing property set to border-box, when you set an element’s width to 50%,
+for instance, that element will take up 50 percent of the space, even if you add
+padding and borders to that element.
+
+-->
+      <!-- CASCADING RULES
+        NEAREST ANCESTOR WINS
+          if we have a situation body > p > strong
+          if body has font color green
+          if p has font color red
+          then strong has font color red
+          but if strong had a color orange, then it would override p and body colors
+
+        SPECIFICITY:
+        •	 A tag selector is worth 1 point. eg: img {}
+        •	 A class selector is worth 10 points.
+        •	 An ID selector is worth 100 points.
+        •	 An inline style (page 44) is worth 1,000 points.
+        if specificity are equal, last rule wins
+
+        avoid id and !important they are very powerful and very difficult to override
+        //http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class
+
+        In other words, as a web designer, you can choose to stick with the tried-and-true
+        font method—selecting fonts from the basic set installed on most computers—or use
+        web fonts for greater design choice (at the cost of more work).
+
+-->
+    <!-- background images
+    CSS3 adds the ability to tell a browser where the background image should begin in
+relation to the border, padding, and content of an element. For example, normally
+when you tile an image, it starts in the upper-left corner of the padding of an element
+(see the top, middle image in Figure 8-10). However, you can reposition that image’s
+starting point, using the background-origin property. It takes one of three values:
+•	 border-box places the image in the upper-left corner of the area assigned to
+the border (top-left in Figure 8-10).
+•	 padding-box places the image in the upper-left corner of the area assigned
+to the padding (top-middle in Figure 8-10). This is normally where a browser
+places a background image.
+•	 content-box places the image in the upper-right corner of the area assigned to
+the content (top-right in Figure 8-10).
+
+You might think that using a linear gradient would be a lot better than using
+a gradient image. In some cases, that’s true. However, when adding a linear
+gradient to the background of a page, the web browser literally has to redraw
+that background gradient every time you resize the browser window, causing a
+noticeable slowing down of the page rendering and making the page feel slow.
+In addition, because linear gradients don’t work in IE 9 or earlier without some
+additional code, you’ll stick with a background image for now.
+-->
+
+      <!--  CSS TRANSFORMS
+        allows to rotate, scale, move, distort elements alogn vertical/horizontal axis.
+        it doesn't affect elements around it. if you resize it. it will overlap, but will
+        not move other elements around it.
+        you have to add veendor prefix for all browsers
+
+        tranform:rotate(180deg); flip
+        transform:rotate(-45deg); counterclockwise 45 deg
+
+        transform:scale(2)
+        transform: scaleX(2);
+        tranform: scaleY(2);
+
+        transform:translate(200px, 150px); move the element.left, down
+
+        transform:skew(45deg, 0); slant on horizontal/vertical axes
+
+        transofrm uses elements center as the pivot. but you specifiy the orgin
+
+        transform-origin: left top;
+        transform-origin: 0 0;
+        transform-orign: 0% 0%;
+
+        transform-origin: right bottom;
+        transform-origin: 100% 100%;
+      -->
+
+      <!-- forms
+      when styling forms use attribute selectors
+      input[type='text']{
+
+      }
+      input[type='password']{
+
+      }
+    -->
+  </body>
+</html>

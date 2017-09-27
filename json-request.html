@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+            .hide-me{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JSON and AJAx</h1>
+        <button id='btn'>Fetch 3 info</button>
+        <div id='animal-info'></div>
+    <script>
+        var pageCounter = 1;
+        var btn = document.getElementById('btn')
+        var ddiv = document.getElementById('animal-info')
+        var ourRequest = new XMLHttpRequest();
+        ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+        
+        btn.addEventListener('click', function(){
+            var ourData = JSON.parse(ourRequest.responseText);
+            console.log(ourData[0]);
+            renderHTML('data')
+            pageCounter++;
+            if (pageCounter > 3){
+                btn.classList.add("hide-me");
+            }
+        });
+        
+        
+        
+        ourRequest.send();
+        
+        function renderHTML(data){
+            //ddiv.appendChild(document.createTextNode(data))
+            ddiv.insertAdjacentHTML('beforeend', 'testing123')
+        }
+        //https://learnwebcode.github.io/json-example/animals-1.json
+    </script>
+    </body>
+</html>

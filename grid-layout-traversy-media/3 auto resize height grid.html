@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        
+        .wrapper > div {
+            background: #eee;
+            padding: 1em;
+        }
+        
+        .wrapper > div:nth-child(odd) {
+            background: #ddd;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>template-column 1fr 1fr 2fr auto resize height min-height: 100px</h1>
+    <div class='wrapper'>
+        <div>lorem ipsum</div>
+        <div>lorem ipsum</div>
+        <div>
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+        </div>
+        <div>lorem ipsum</div>
+        <div>lorem ipsum</div>
+        <div>lorem ipsum</div>
+    </div>
+</body>
+
+</html>

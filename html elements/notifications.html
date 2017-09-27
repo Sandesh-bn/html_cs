@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            .notification {
+                transition: all 0.35s;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                margin-top: -100%;
+                background: lightgreen;
+            }
+            
+            .warning {
+                background: red;
+            }
+            .notification .close {
+                position: absolute;
+                top: calc(50% - 1rem);
+                right: 1rem;
+            }
+            
+            .notification .close a {
+                display: block;
+                height: 2rem;
+                width: 2rem;
+                text-indent: 2rem;
+                overflow: hidden;
+            }
+            
+            .notification .close:after {
+                content: 'X';
+                font-weight: 800;
+                color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 2rem;
+                line-height: 2rem;
+                width: 2rem;
+                text-align: center;
+                pointer-events: none;
+            }
+            
+            .notification:target {
+                transition: all 0.35s;
+                margin-top: 0;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <div id="one" class="notification">
+            <div class="content">
+                <p>This is sucess</p>
+                <div class="close">
+                    <a href="#">Close</a>
+                </div>
+            </div>
+        </div>
+        
+         <div id="two" class="notification warning">
+            <div class="content">
+                <p>This is warning</p>
+                <div class="close">
+                    <a href="#">Close</a>
+                </div>
+            </div>
+        </div>
+        
+        <p> <a href="#one" class='open_notification'>Open 'Success' notification</a></p>
+        <p> <a href="#two" class='open_notification'>Open 'Warning' Notification</a></p>
+        
+    </body>
+</html>

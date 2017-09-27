@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flexy Responsive Flexbox Grid Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/nav.css">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+        #nav {
+            position: relative;
+        }
+        #nav uls{
+            display: none;
+            width: 100%;
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        #nav ul li a{
+            display: block;
+            padding: .8em;
+            background: #16a085;
+            color: white;
+            text-decoration: none;
+            border-right: 1px solid #34495e;
+            font-size: .9em;
+        }
+        #nav ul li a:hover{
+            background: #138a72;
+        }
+        #nav ul li:last-of-type a{
+            border-right: 0px;
+        }
+        #nav ul li ul li a{
+            padding-left: 1.5em;
+        }
+        #nav ul li ul li ul li a{
+            padding-left: 3.12em;
+        }
+        #nav input.trigger{
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        #nav input.trigger:checked~ul, #nav input.trigger:checked ~ ul li ul{
+            display: block!important;
+        }
+        @media(min-width: 48em){
+            
+        }
+    </style>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='row'>
+            <div class='col-12'>
+                <img class='logo' src='img/flexy-logo.png'/>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-12'>
+                <nav id='nav'>
+                    <input type='checkbox' id='nav-button' class='trigger'>
+                    <label for='nav-button'>Menu</label>
+                    <ul>
+                        <li><a href='#'>Blog</a></li>
+                        <li><a href='#'>About</a></li>
+                        <li><a href='#'>Special</a></li>
+                        <li><a href='#'>Contact us</a></li>
+                        <li><a href='#'>Products</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-12'>
+                <img src='img/kite.png'/>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-12'>
+                <h2 class='dark'>Welcome to flexy!!</h2>
+            </div>
+        </div>
+        
+        <div class='row'>
+            <div class='col-12'>
+                <img src='img/paper.png'>
+            </div>
+        </div>
+        
+        <div class='row'>
+            <div class='col-11'>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

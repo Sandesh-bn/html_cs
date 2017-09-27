@@ -1,0 +1,116 @@
+<html>
+    <head>
+        
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+                background: #0E9CE2; /* Old browsers */
+                background: -moz-linear-gradient(135deg, #0E9CE2 0%, #2c5c98 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(135deg, #0E9CE2 0%,#2c5c98 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(-45deg, #0E9CE2 0%,#2c5c98 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#2c5c98',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            }
+            #wrapper {
+                width: 80%;
+                margin: 2em auto;
+                
+            }
+            
+            .flex-box {
+                display: flex;
+                justify-content: flex-end;
+                
+            }
+            
+            ul li {
+                padding: .5em;
+                margin: 0;
+                list-style-type: none;
+                color: white;
+            }
+            ul li:nth-child(1){
+                flex: 1;
+            }
+            ul li:nth-child(5){
+                border: 1px solid white;
+                border-radius: 2px;
+            }
+            #logo {
+                font-size: 2em;
+                padding-left: 2em;
+            }
+            article {
+                text-align: center;
+                padding-top: 5em;
+                margin: 0 auto;
+                width: 60%;
+                line-height: 3em;
+                
+            }
+            article h1{
+                font-size: 2em;
+            }
+            
+            #userInput {
+                width: 60%;
+                
+                text-align: center;
+                margin: 0 auto;
+            }
+            #userInput input {
+                background: #2f79b5;
+                color: white;
+                width: 100%;
+                font-size: 1.2em;
+                margin: 1em auto;
+                
+                padding: 1em 5em 1em 1em;
+                border: none;
+                -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.75);
+            }
+            ::-webkit-input-placeholder{
+                color: white;
+            }
+            #userInput button{
+                position: relative;
+                display: inline;
+                
+                background: lightblue;
+                border: none;
+                color: white;
+                padding: 1.1em 2em 1em 2em;
+                font-size: 1em;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <nav>
+                <ul class='flex-box'>
+                    <li id='logo'>Bolt</li>
+                    <li>Team</li>
+                    <li>Security</li>
+                    <li>Merchants</li>
+                    <li>We're Hiring!</li>
+                </ul>
+            </nav>
+            <article>
+                <h1>The world's most intelligent payments platform</h1>
+                <h2>Subscribe to our waitlist to learn more</h2>
+                <div id="userInput">
+                    <input type="email" placeholder='Enter email'>
+                    <button>Sign up</button>
+                </div>
+            </article>
+            <footer></footer>
+        </div>
+    </body>
+    
+</html>

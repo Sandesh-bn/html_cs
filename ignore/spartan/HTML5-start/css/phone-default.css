@@ -1,0 +1,148 @@
+/*-----Prevents iPhone from resizing in landscape mode -----*/
+html {-webkit-text-size-adjust: none; }
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*-----BODY -----*/
+body {
+	font-size: 16px;	
+    font-family: Verdana, Geneva, sans-serif;
+    background: #fef9d6;
+}
+
+
+/*-----CONTAINER -----*/
+#container {
+	background-color: #224260;   /*becomes the nav background color*/
+	min-width: 320px;
+	max-width: 960px;
+}
+
+/*-----HEADER -----*/
+header {
+    background: #111;
+    border-bottom: solid #65ff09 5px;
+    
+}
+header img {
+    float: left;
+    padding: .5em 2%;
+}
+header h1 {
+    font-size: 1.8em;
+    padding-top: .2em;
+    color: #f9db00;
+}
+header h2 {
+    font-size: 1.1em;
+    padding: .3em 0 .6em 0;
+    color: #ff2a86;
+}
+
+
+
+/*-----NAVigation -----*/
+nav {}
+nav ul li {}
+nav ul li a {
+	display:block;
+	text-align: center;
+    padding:.7em;
+    color: white;
+    text-decoration: none;
+    background: #004bb8;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin: .5em;
+    font-size: .85em;
+}
+
+nav ul li.active a {
+    background: #b8005c;
+}
+
+nav ul li a:hover {
+	background-color:#f9db00;
+    color: #323040
+}
+
+
+/*-----CONTENT -----*/
+#content {
+	min-height: 5em;
+    background: white;
+}
+
+#content h1{
+    margin: 1em 2% 0 2%;
+    font-size: 1.5em;
+    color: #b8005c;
+}
+#content p {
+    padding-bottom: .5em;
+}
+#content article{
+    margin: 0 2%;
+}
+
+#content article.news, #content article.tweet {
+    background: #ddd;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+article.news h2, article.tweet h2{
+    color: white;
+    font-size: .8em;
+    padding: .5em;
+}
+article.news h2{background: #004bb8;}
+article.tweet h2{background: #b8005c;}
+
+article.news h3, article.tweet h3{
+    font-size: 1em;
+    padding: .5em 0 0 1%;
+}
+article.news h3{color: #004bb8;}
+article.tweet h3{color: #b8005c;}
+
+article.news p, article.tweet p{
+    color: #666;
+    font-size: .8em;
+    padding-left: 1%;
+    padding-right: 1%;
+    line-height: 120%;
+}
+/*-----Images --- */
+figure.100 {
+    width: 100%;
+}
+figure.w33 {
+    width: 96%;
+    border: 1px solid #999;
+    margin: .3em 0% .3em 2%;
+}
+figure img {
+    width: 100%;
+}
+#content figcaption{
+    text-align: center;
+    font-size: .6em;
+    color: #777;
+    padding: .3em;
+}
+/*----- FOOTER -----*/
+footer {
+	clear: both;
+	text-align: center;
+	padding: 1em;
+    background: #111;
+    color: white;
+    font-size: .6em;
+}
+
+/*--------OTHER ----*/
+.keepOpen{
+    clear: both;
+}

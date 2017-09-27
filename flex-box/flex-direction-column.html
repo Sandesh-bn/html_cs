@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            #flex-container{
+                display: flex;
+                border:  solid 4px black;
+                flex-direction: column;
+            }
+            .flex-item{
+                font-size: 1.2em;
+                padding: 1em;
+                text-align: center;
+                color: white;
+            }
+            .flex-item strong{
+                font-size: 1.2em;
+                display: block;
+            }
+            .flex-item:nth-child(1){
+                background: red;
+            }
+            .flex-item:nth-child(2){
+                background: lightgreen;
+            }
+            .flex-item:nth-child(3){
+                background: lightblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='flex-container'>
+            <div class='flex-item'>
+                <em>flex item</em>
+                <strong>1</strong>
+            </div>
+            <div class='flex-item'>
+                <em>flex item</em>
+                <strong>2</strong>
+            </div>
+            <div class='flex-item'>
+                <em>flex item</em>
+                <strong>3</strong>
+            </div>
+        </div>
+    </body>
+
+</html>

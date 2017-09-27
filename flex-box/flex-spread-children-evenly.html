@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <style>
+            .flex-container{
+                display: flex;
+                border: 4px solid black;
+            }
+            .flex-item {
+                font-size: 1.2em;
+                padding: 1em;
+                text-align: center;
+                color: white;
+            }
+            .spread-begin{
+                justify-content:space-between;
+            }
+            
+            .spread-around{
+                justify-content: space-around;
+            }
+        .flex-item strong,
+        .flex-item em {
+            font-size: 1.2em;
+            display: block;
+        }
+        
+        .flex-item:nth-child(1) {
+            background: red;
+        }
+        
+        .flex-item:nth-child(2) {
+            background: lightgreen;
+        }
+        
+        .flex-item:nth-child(3) {
+            background: lightblue;
+        }
+        
+        .flex-item:nth-child(4) {
+            background: gold;
+        }
+        
+        .flex-item:nth-child(5) {
+            background: aqua;
+        }
+        
+        .flex-item:nth-child(6) {
+            background: green;
+        }
+        
+        .flex-item:nth-child(7) {
+            background: olive;
+        }
+        
+        .flex-item:nth-child(8) {
+            background: brown;
+        }
+        
+        .flex-item:nth-child(9) {
+            background-color: blueviolet;
+        }
+
+        </style>
+    </head>
+    <body>
+    <h1>equal space bw items. </h1>
+    <div class='flex-container spread-begin'>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>1</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>2</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>3</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>4</strong>
+        </div>
+    </div>
+        
+    <br>
+    <h1>space around. remaining space is split bw items and is split in half from begin and from end</h1>
+    <div class='flex-container spread-around'>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>1</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>2</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>3</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>4</strong>
+        </div>
+    </div>
+    </body>
+
+</html>

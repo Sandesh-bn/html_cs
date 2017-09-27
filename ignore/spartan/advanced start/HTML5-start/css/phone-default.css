@@ -1,0 +1,157 @@
+/*-----Prevents iPhone from resizing in landscape mode -----*/
+html {-webkit-text-size-adjust: none; }
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*-----BODY -----*/
+body {
+	font-size: 16px;	
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+
+/*-----CONTAINER -----*/
+#container {
+	background-color: #ab6d00;   /*becomes the nav background color*/
+	min-width: 320px;
+	max-width: 1140px;
+}
+
+/*-----HEADER -----*/
+header {
+    
+}
+header hgroup{
+    font-family: 'Overlock', cursive;
+    color: #eca932;
+}
+header h1 {
+    font-size: 2em;
+}
+header h2 {
+    font-size: 1.05em;
+}
+header ul.icons{
+    float: right;
+    padding-right: 2%;
+}
+header ul.icons li{
+    float: left;
+}
+header ul.icons li:hover{
+    opacity: 0.7;
+}
+header img.headerImage {
+    display: none;
+}
+
+/*-----NAVigation -----*/
+nav {}
+nav ul {
+    padding: 1em 0;
+    
+}
+nav ul li {
+    float: left;
+    width: 46%;
+    margin: 0 2%;
+}
+nav ul li a {
+	text-align: center;
+    display: block;
+    font-weight: 600;
+    margin: .2em 0;
+    padding: .6em 0;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
+}
+nav ul li a:hover {
+	background-color:rgba(0,0,0,.4);
+}
+
+
+
+/*-----CONTENT -----*/
+#content {
+	min-height: 5em;
+    background: #eee;
+    padding: .5em 2%;
+}
+#content h1{
+    font-family: 'Overlock', cursive;
+    color: #5b0000;
+}
+#content hr{
+    height: 30px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#871b1c+0,7db9e8+100 */
+    background: #871b1c; /* Old browsers */
+    background: -moz-linear-gradient(left, #871b1c 0%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #871b1c 0%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #871b1c 0%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#871b1c', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+    border: none;
+}
+
+article {
+    box-shadow: 5px 5px 10px #888686;
+    padding: 15px;
+    
+}
+#content article h2{
+    font-weight: 600;
+    font-size: 1.2em;
+    padding-top: 2em;
+    color:#773300;
+}
+#content article p{
+    font-size: 1em;
+    padding: .3em 0 .1em 1em;
+    color: #763400;
+    line-height: 1.5em;
+}
+#content a.top {
+    background: #aa6d00;
+    font-size: .8em;
+    font-weight: 600;
+    padding: .3em 1em;
+    border-radius: 24px;
+    height: 48px;
+    width: 48px;
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    float: right;
+    text-decoration: none;
+}
+
+#content ul.carpics li {
+    float: left;
+    padding: 2%;
+    width: 25%;
+}
+
+#content ul.carpics li a img{
+    width: 100%;
+    border: 1px solid #777;
+    transition: transform 0.5s ease;
+}
+#content ul.carpics li a:hover img{
+    transform: scale(1.5);
+}
+
+/*----- FOOTER -----*/
+footer {
+	clear: both;
+	text-align: center;
+	padding: 1em;
+    
+}
+
+/*--- OTHER ----*/
+.keepOpen{
+    clear: both;
+}

@@ -1,0 +1,73 @@
+@media only screen and (min-width: 600px) {
+/*-----BODY -----*/
+	body {}
+
+
+
+/*-----CONTAINER -----*/
+	#container {}
+
+
+
+/*-----HEADER -----*/
+    header img {
+        width: 170px;
+    }
+    header h1{
+      padding-top: 1.6emm;
+        font-size: 2.5em;
+    }
+    header h2{
+        font-size: 1.2em;
+    }
+
+
+/*-----NAVigation -----*/
+	nav ul li {	}
+	
+    nav select{display: none;}
+    nav ul {display: block;}
+    nav {
+        width: 25%;
+        float: left;
+        padding: 0;
+    }
+    nav ul li a {
+        display: block;
+        padding: .6em;
+        text-decoration: none;
+        border-top: 1px soli rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 600;
+        background: #3f3f3f;
+        
+    }
+    
+    nav ul li a:hover{
+        background: #272727;
+    }
+    
+    nav ul li ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav ul li ul li a{
+        color: rgba(255, 255, 255, 0.8);
+        padding: .6em;
+        padding-left: 20px;
+        font-size: .7em;
+        background: #3f3f3f;
+    }
+/*-----CONTENT -----*/
+    #content {
+        width: 75%;
+        float: left;
+    }
+
+
+/*----- FOOTER -----*/
+
+	
+}

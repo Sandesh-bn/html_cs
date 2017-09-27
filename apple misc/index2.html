@@ -1,0 +1,325 @@
+<html>
+
+<head>
+   <link href="https://fonts.googleapis.com/css?family=Carme|Lato|Hind|Open+Sans:300|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./styles2.css">
+</head>
+
+<body>
+    <div id="wrapper" class="">
+        <div id="intro" class="banner">
+            <div class="half">
+                <img src="images/logo1.png" alt="">
+            </div>
+            <div class="half">
+                <p>Welcome</p>
+                <button id='intro-next'>Let's get started</button>
+            </div>
+        </div>
+        
+        <div id="rules-banner" class="banner">
+            <p>Guess the 4 unique digits</p>
+            <table>
+                <tr>
+                    <td><img class='rule-image' src="images/cow_thumbnail.png"></td>
+                    <td>Only digits match</td>
+                </tr>
+                <tr>
+                    <td><img class='rule-image' src="images/bull_thumbnail.png"></td>
+                    <td>Digits and position match</td>
+                </tr>
+                
+            </table>
+            
+            
+            <h4> Try to guess the number in the least number of attempts.</h4>
+            <button id='rules-next'>Next</button>
+        </div>
+
+        <div id="game-banner" class="banner">
+            <input  id="user-input" maxlength="4" placeholder="Enter 4 unique digits.">
+            
+            <table class='result'>
+                <tr>
+                    <td><img src="images/bull_thumbnail.png">
+                        <p class='count'>
+                    </td>
+                    <td id='bull-count'>0</td>
+                </tr>
+                <tr>
+                    <td><img src="images/cow_thumbnail.png"></td>
+                    <td id='cow-count'>0</td>
+                </tr>
+                <tr>
+                    <td>Tries</td>
+                    <td id="attempt-count">1</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td id="timer">00:00</td>
+                </tr>
+            </table>
+            
+        </div>
+
+        <div class='banner' id='success-banner'>
+            <h1>Congratulations !</h1>
+            <h2>Tries </h2>
+            <div id="guessCount">14</div>
+            <h2>Time:</h2>
+            <div id="guessTime">00:00</div>
+            <button id='restart-btn' onclick=window.location.reload()>Restart</button>
+        </div>
+
+    </div>
+    <script>
+        window.onload = function() {
+            console.log("loaded");
+           
+            const $ = function(id) {
+                return document.getElementById(id);
+            }
+            // INtialize all variables
+            // display intro banner
+                //after 2 seconds hide it
+            // display rules
+                // onclick hide it
+            // start game
+            const wrapper = $('wrapper');
+            const introBanner = $('intro');
+            const rulesBanner = $('rules-banner');
+            const gameBanner = $('game-banner');
+            const successBanner = $('success-banner');
+            const introNext = $('intro-next');
+            const rulesNext = $('rules-next');
+            const inputBox = $("user-input");
+            const bullCountPlaceHolder = $("bull-count");
+            const cowCountPlaceHolder = $("cow-count");
+            const invalidChars = ["-", "+", "e", ];
+            const attemptCountPlaceHolder = $("attempt-count");
+            const guessCountPlaceHolder = $("guessCount");
+            const guessTimePlaceHolder = $("guessTime");
+            const restartBtn = $("restart-btn");
+            const closeBtn = $("close-btn");
+            let userInput = "";
+            const timerPlaceHolder = $("timer")
+                // 1234 1211 
+            let userDigits = new Set();
+            let seconds = 0,
+                hours = 0,
+                minutes = 0;
+            
+            const hideIntro = function(){
+                introNext.style.transition = 'all 0s';
+                introBanner.style.visibility = 'hidden';
+                rulesBanner.style.transform = "scale(1) translate(-50%, -50%)";
+                wrapper.classList.remove('black-bg');
+                //wrapper.classList.add('blue-bg');
+                console.log(document.styleSheets[0])
+                document.styleSheets[1].addRule('#wrapper::after', 'opacity: 1');
+                document.styleSheets[1].insertRule('#wrapper::after { opacity: 1; }', 0);
+                var style = document.createElement("style");
+
+            // Append the style tag to head
+            document.head.appendChild(style);
+
+            // Grab the stylesheet object
+            sheet = style.sheet
+
+            // Use addRule or insertRule to inject styles
+            sheet.addRule('#wrapper::after', 'opacity: 1');
+            sheet.insertRule('#wrapper::after { opacity: 1; }', 0);
+            }
+            introNext.addEventListener('click', hideIntro);
+            
+            rulesNext.addEventListener('click', () => {
+                rulesNext.style.visibility = 'hidden';
+                rulesNext.style.transition = 'all 0s ease-in-out';
+                rulesBanner.style.transition = 'all 0s ease-in-out';
+                rulesBanner.style.visibility = 'hidden';
+                gameBanner.style.transform = "scale(1) translate(-50%, -50%)";
+                startGame();
+            })
+            /*
+            // get random number
+            const getRandomNumber = function() {
+                var val = Math.floor(1000 + Math.random() * 9000);
+
+                const isUnique = function(num) {
+                    let copy = num;
+                    let uniqueDigits = new Set();
+                    while ((num) > 0) {
+                        let digit = num % 10;
+                        if (uniqueDigits.has(digit)) {
+                            console.log("culprit " + copy)
+                            return false;
+                        }
+                        uniqueDigits.add(digit)
+                        num = Math.floor(num / 10)
+                    }
+                    return true;
+                }
+                while (!isUnique(val)) {
+                    val = Math.floor(1000 + Math.random() * 9000);
+                }
+                return val.toString();
+            }
+
+            const getBullCowCount = function(randomNumber, userNumber) {
+                let bull = 0,
+                    cow = 0;
+                let randomDigits = [];
+                let userDigits = [];
+
+                for (let i in userNumber) {
+                    if (randomNumber[i] == userNumber[i])
+                        bull++;
+                    else {
+                        randomDigits.push(randomNumber[i]);
+                        userDigits.push(userNumber[i]);
+                    }
+                }
+
+                for (let i in userDigits) {
+                    if (randomDigits.indexOf(userDigits[i]) != -1) {
+                        cow++;
+                        //secretDigits
+                    }
+                }
+                let result = [bull, cow];
+                return result;
+            };
+
+            //const startGame = function(){
+            //startTimer();
+            
+            
+            
+            inputBox.addEventListener("mousewheel", function(event){ this.blur() })
+            const startGame = function(){
+                console.log("started")
+                let randomNumber = getRandomNumber();
+                let attemptCount = 1;
+                let inputDigits = [];
+                attemptCountPlaceHolder.textContent = attemptCount;
+                function add() {
+                    seconds++;
+                    if (seconds >= 60) {
+                        seconds = 0;
+                        minutes++;
+                        if (minutes >= 60) {
+                            minutes = 0;
+                            hours++;
+                        }
+                    }
+
+                    timerPlaceHolder.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+                    timer();
+                }
+
+                function timer() {
+                    t = setTimeout(add, 1000);
+                }
+                timer();
+
+
+
+
+                timerPlaceHolder.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+                inputBox.addEventListener('keyup', function(e) {
+                    //console.log("hello" + inputBox.value.length);
+                    if (invalidChars.includes(e.key) || userInput.length > 3) {
+
+                        e.preventDefault();
+                    }
+                    let input = e.key;
+                    if (input.charCodeAt(0) === 66) {
+                        console.log("backspace");
+                        inputDigits.pop();
+                        userInput = userInput.substr(0, userInput.length - 1);
+                        inputBox.value = userInput;
+                    } else if (inputDigits.includes(input) || input.charCodeAt(0) < 48 || input.charCodeAt(0) > 57) {
+                        inputBox.value = userInput;
+                        console.log("display tooltip"); //displayTooltip();
+                        console.log(input.charCodeAt(0))
+                        e.preventDefault();
+                    } else {
+                        inputDigits.push(input);
+                        userInput += input;
+                        if (userInput.length > 3) {
+
+                            console.log("4 digit " + userInput);
+                            console.log("cleared")
+
+
+                            console.log("random " + randomNumber)
+                            let result = getBullCowCount(randomNumber, userInput);
+                            //let result = getBullCowCount('1807', '7810');
+                            console.log(result);
+                            bullCountPlaceHolder.textContent = result[0];
+                            cowCountPlaceHolder.textContent = result[1];
+                            attemptCountPlaceHolder.textContent = attemptCount;
+                            if (result[0] == 4) {
+                                //alert("You won")
+                                timerPlaceHolder.textContent = "00:00:00";
+                                clearTimeout(t);
+                                seconds = 0;
+                                hours = 0;
+                                minutes = 0;
+                                gameBanner.style.transition = 'all 0s ease-in-out';
+                                gameBanner.style.visibility = 'hidden';
+                                
+                                guessCountPlaceHolder.textContent = attemptCount;
+                                successBanner.style.transform = "scale(1) translate(-50%, -50%)";
+                                //successBanner.classList.add('show');
+                                //successBanner.style.transformOrigin = "50% 50%";
+
+                                //successBanner.style.transform = "scale(1)"
+                                //successBanner.classList.add('popup', 'show');
+                            }
+                            inputDigits = [];
+                            userInput = "";
+                            attemptCount++;
+                            inputBox.value = "";
+                            inputBox.focus();
+                            // if bull count == 4
+                            // make game banner invisible
+                            // remvoe eventlistener form input box
+                            // show success banner
+
+                            return;
+                        }
+                        //userInput += e.key;
+                        console.log(userInput);
+                    }
+                })
+
+                }
+                
+                */
+            // input box
+            // accept one digit at a time
+            // if user enters non-numeric or userdigits has it, shake it, dont update userdigits or input field
+            // otherwise add it to userdigits array
+            // once there are 4 digits call getbullsandcows method
+            // clear input field display cows and bulls value
+            // if bull count != 4
+            // get input again, increment attempts
+            // dont change random number
+
+
+            // once the user clicks next button on rules page or restarts
+            // the game begins, timer starts
+            // user enters input
+            // if user enters same digit show tooltip
+            // as soon as there are 4 digits
+            // display the cow count bull count
+            // if bull count == 4, display success. reload the page
+        }
+
+    </script>
+</body>
+
+</html>

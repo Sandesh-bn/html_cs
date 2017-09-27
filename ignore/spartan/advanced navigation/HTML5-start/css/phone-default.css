@@ -1,0 +1,97 @@
+/*-----Prevents iPhone from resizing in landscape mode -----*/
+html {-webkit-text-size-adjust: none; }
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*-----BODY -----*/
+body {
+	font-size: 16px;
+    font-family: 'Signika', sans-serif;
+    font-weight: 300;
+    background: #c1c1c1;
+}
+
+
+/*-----CONTAINER -----*/
+#container {
+	background-color: #fff;   /*becomes the nav background color*/
+	min-width: 320px;
+	max-width: 1140px;
+}
+
+/*-----HEADER -----*/
+header {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#444040+0,0f0808+100 */
+background: #444040; /* Old browsers */
+background: -moz-linear-gradient(top, #444040 0%, #0f0808 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #444040 0%,#0f0808 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #444040 0%,#0f0808 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444040', endColorstr='#0f0808',GradientType=0 ); /* IE6-9 */
+}
+header img {
+    width: 320px;
+}
+header h1 {}
+header h2 {}
+
+
+div.decorativeWrapper{
+    display: none;
+}
+
+/*-----NAVigation -----*/
+nav {}
+nav ul {
+    border: 1px #ccc solid;
+    border-radius: 14px;
+    margin: .5em 2%;
+    background: #f3f3f3;
+    box-shadow: 0 0 5px #666;
+}
+nav ul li {}
+nav ul li a {
+	display:block;
+    text-align: center;
+    padding: .6em;
+    border-top: 1px #ccc solid;
+    text-decoration: none;
+    font-weight: 600;
+}
+nav ul li:first-child a {
+    border-top: none;
+}
+nav ul li a:hover {
+	
+}
+
+button#showPhoneNav{
+    color: #fff;
+    font-weight: 600;
+    display: block;
+    border: 1px #222 solid;
+    border-radius: 10px;
+    width: 96%;
+    margin-left: 2%;
+    padding: .75em 0;
+    background: #444040; /* Old browsers */
+background: -moz-linear-gradient(top, #444040 0%, #0f0808 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #444040 0%,#0f0808 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #444040 0%,#0f0808 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444040', endColorstr='#0f0808',GradientType=0 ); /* IE6-9 */
+
+}
+
+/*-----CONTENT -----*/
+#content {
+	min-height: 5em;
+}
+
+
+
+/*----- FOOTER -----*/
+footer {
+	clear: both;
+	text-align: center;
+	padding: 1em;
+}

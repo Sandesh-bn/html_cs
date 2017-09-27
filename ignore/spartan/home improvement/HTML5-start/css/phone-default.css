@@ -1,0 +1,86 @@
+/*-----Prevents iPhone from resizing in landscape mode -----*/
+html {-webkit-text-size-adjust: none; }
+
+/*----------- apply a natural box layout model to all elements --------------*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/*-----BODY -----*/
+body {
+	font-size: 16px;	
+    background: black;
+    font-family: serif;
+    font-weight: 400;
+}
+
+
+/*-----CONTAINER -----*/
+#container {
+	background-color: #fff;   /*becomes the nav background color*/
+	min-width: 320px;
+	max-width: 1140px;
+}
+
+/*-----HEADER -----*/
+header {}
+header h1 {}
+header h2 {}
+
+#phone{
+    margin: .6em 2% 0 0;
+    float: right;
+    font-size: 1em;
+    color: #fff;
+}
+header img {
+    padding-right: 2%;
+    width: 100px;
+    float: left;
+}
+/*-----NAVigation -----*/
+nav {
+    padding: .5em 0;
+    background: #3f3f3f;
+}
+nav ul li {}
+nav ul {display: none;}
+nav select {
+    width: 96%;
+    margin-left: 2%;
+}
+
+nav ul li.selected a{
+    color: yellow;
+}
+nav ul li ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    padding: .6em;
+    padding-left: 20px;
+    font-size: .7em;
+    background: #3f3f3f;
+}
+nav ul li.selected ul li a {
+    color: rgba(255, 255, 255, 0.8);
+}
+nav ul li ul li.selected a{
+    color: #eba600;
+}
+
+/*-----CONTENT -----*/
+#content {
+	min-height: 15em;
+}
+
+
+
+/*----- FOOTER -----*/
+footer {
+	clear: both;
+	text-align: center;
+	padding: 1em;
+}
+
+.clearfix:after{
+    content:"";
+    clear: both;
+    display: table;
+}

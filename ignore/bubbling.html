@@ -1,0 +1,32 @@
+<html>
+    <style>
+        .divystyle{
+            display: table-cell;
+            border: 5px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div id='div1' class='divystyle'>
+            Div1
+            <div id='div2' class='divystyle'>
+                Div2
+                <div id='div3' class='divystyle'>
+                    Div3
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var divs = document.getElementsByTagName('div');
+            for (var i = 0; i < divs.length; i++){
+                divs[i].addEventListener('click', ch)
+            }
+                                         
+            function ch(){
+             alert(this.getAttribute('id') + " click event handled");        
+            }
+        </script>
+    </body>
+</html>

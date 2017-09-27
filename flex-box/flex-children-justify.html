@@ -1,0 +1,150 @@
+<html>
+
+<head>
+    <style>
+        .flex-container {
+            display: flex;
+            border: solid 4px black;
+        }
+        
+        .justify-end{
+            justify-content: flex-end;
+        }
+        
+        .direction-column{
+            flex-direction: column;
+            height: 30em;
+        }
+        .flex-item {
+            font-size: 1.2em;
+            padding: 1em;
+            text-align: center;
+            color: white;
+        }
+        
+        .flex-item strong,
+        .flex-item em {
+            font-size: 1.2em;
+            display: block;
+        }
+        
+        .flex-item:nth-child(1) {
+            background: red;
+        }
+        
+        .flex-item:nth-child(2) {
+            background: lightgreen;
+        }
+        
+        .flex-item:nth-child(3) {
+            background: lightblue;
+        }
+        
+        .flex-item:nth-child(4) {
+            background: gold;
+        }
+        
+        .flex-item:nth-child(5) {
+            background: aqua;
+        }
+        
+        .flex-item:nth-child(6) {
+            background: green;
+        }
+        
+        .flex-item:nth-child(7) {
+            background: olive;
+        }
+        
+        .flex-item:nth-child(8) {
+            background: brown;
+        }
+        
+        .flex-item:nth-child(9) {
+            background-color: blueviolet;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>default justify, children align to main-start</h1>
+    <div class='flex-container'>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>1</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>2</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>3</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>4</strong>
+        </div>
+    </div>
+    <h1>justify-content: flex-end, children align to main-end</h1>
+    <div class='flex-container justify-end'>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>1</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>2</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>3</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>4</strong>
+        </div>
+    </div>
+    
+    <h1>flex-direction column, justify-content default</h1>
+    <div class='flex-container direction-column'>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>1</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>2</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>3</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>4</strong>
+        </div>
+    </div>
+    
+    <h1>flex-direction column, justify-content flex-end</h1>
+    <div class='flex-container justify-end direction-column'>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>1</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>2</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>3</strong>
+        </div>
+        <div class='flex-item'>
+            <em>flex item</em>
+            <strong>4</strong>
+        </div>
+    </div>
+</body>
+</html>

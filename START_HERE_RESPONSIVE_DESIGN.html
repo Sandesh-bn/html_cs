@@ -1,0 +1,371 @@
+ <html>
+    <head>
+        <style>
+            
+            /*
+            // fallback
+            body {
+                background: gray;
+            }
+            
+             // >= 320 < 550
+             @media screen and (min-width: 320px){
+                body{
+                    background: green;
+                }
+             }
+            
+             // >= 550 < 768
+              @media screen and (min-width: 550px){
+                body{
+                    background: red;
+                }
+              }
+             // 320, 550, 768, 960
+            */
+            
+            /* 
+            if screen size is less than 400, apply this
+            @media screen and (max-device-width: 400px){
+            h2{color: green}
+            }
+            /*
+            apply this style if device is >= 800 and orientation is portrait
+            <link rel="stylesheet" media="screen and (orientation: portrait) and 
+(min-width: 800px)" href="800wide-portrait-screen.css" />
+            
+            apply this style if device is not 800 and orientation is not portrait
+            <link rel="stylesheet" media="not screen and (orientation: portrait) and 
+(min-width: 800px)" href="800wide-portrait-screen.css" />
+            
+            you can use px or em: 800px would be 800/16 = 50em
+            */
+            
+            /*
+            apply to high-res devices
+            @media (min-resolution: 2dppx){
+              
+            }
+            */
+            
+            /*
+             The purpose of the viewport meta tag is to provide a 
+way for web pages to communicate to mobile browsers how they would like the web 
+browser to render the page.
+            For the foreseeable future, any web page you want to be responsive, and render well 
+across small screen devices, will need to make use of this meta tag.
+            <meta name="viewport" content="initial-scale=2.0,width=device-width" 
+/>
+            scale the content to twice the size. width of page should be equal to device-width
+            
+            <meta name='viewport' content='width=device-width, maximum-sccale=3, minimum-scale=0.5'/>
+            control's how content scale is limited as user zooms in and out.
+            */
+            
+            /* WHY DO WE NEED FLEXBOX
+            There are problems with Inline block
+                It renders space in-between HTML elements: http://css-
+tricks.com/fighting-the-space-between-inline-block-elements/.
+            
+            There are problems with float: When you specify width in percentage, they don't get rounded consistently across browsers. There will be either gaps or the element jumps to the next row.
+            We also have to clear the floats so that parent element do not collapse.
+            
+            There are problems with display: table and display:table-cell
+            Although they don't have rounding issues, we have to wrap an extra element around items. a table-cell must live inside an element set as table. items set to display:table-cell cannot wrap into multiple lines
+            
+            Flexbox
+            can easily vertically center contents
+            They can change visual order of elements
+            Tey can automatically space and align elements within a box.
+            They automatically assign available space bw them
+            
+            Flexboxs are not supported in IE 9, 8 and below.
+            
+            You MUST add vendor prefixes:
+            Use this tool
+            (https://github.com/postcss/autoprefixer).
+            */
+            
+            /* develop sites for different screen
+            built separate apps for apple, android, windows - expensive
+            different site m.uber.com - not good for seo and analytics will be split
+            best optin use media query
+            
+            orientation condition is not well supported
+            device width = 320 for both orientation!!!
+            screen width = 320(portrait) 480(landscape) for iphone
+                           768(portrait) 1024(landscape) ipad
+                           desktop depends on screen size
+            
+            phone lies about viewport width and ends up shrinking a desktop site
+            to prevent this use <meta name='viewport' content='width=device-width, intial-scale=1.0'/>
+            
+            sizes
+            <= 600 mobile
+            >= 601 <= 1024 tablet(works for both orientation)
+            >= 1025 desktop
+            */
+            
+            /*
+            device width is the size of the monitor
+            they remain the same for all orientation it doesnt matter if you resize the window. the device width remiands the same
+            screen(browser) width changes based on orientation and if you resize teh window.
+            if you use just the width the mobile devices will lie that they are larger size.
+            to work around this, you have to use meta tag.
+            */
+            
+            /*
+            for media queries to work on ie 9, 8, and 7 it has to specified inside the css document and not in link tag
+            you also have to add html5shiv and css-media-querie.js for ie<7
+            */
+            
+            /*
+            best practice: include style reset.css
+            set box-sizing to border-box
+            */
+            
+            /*
+            for responsive design widths should be in %
+            font-size should be in em
+            
+            performing detection is sometimes inaccurate and sending
+            files based on device detection is a bad idea.
+            also it increases load time.
+            
+            using m.uber.com sites negatively affects seo.
+            also it is not feasible when shared on social media
+            
+            always create one site and use media queries to rearrange site content based on device size
+            */
+            
+            /*
+            The viewport meta attribute gives instructions to the browser as to 
+what size the web page should be displayed at so it fits properly in the 
+viewport .
+Web pages without a viewport setting are rendered, or displayed, at full 
+size on desktop monitors, the way you’re accustomed to seeing them .
+            If  device  width  is  not  specified  in  the  viewport  meta  attribute,  the 
+device will use its own default viewport setting to render the page . For 
+example, the default width for iPhones is 980 pixels . So in Figure 3-2, 
+the browser is rendering the page as if the browser window was 980 pix-
+els wide, but then shrinking it down to ⅓ of the size so that it fits on a 
+screen that’s only 320 pixels wide .
+            */
+            
+            /*
+            prevent zooming: maximum-scale=1 or user-scalable=no
+            
+            avoid this
+            
+            only use this when you are designing games
+            */
+            
+            /*
+            header: includes logo, title, search, main navigaation
+            */
+            
+            /* ARIA
+            <header role='banner'>
+            <nav role='navigation'>
+            <footer role='contentinfo'>
+            no aria for article: it is for self-contained content
+            aside is for secondary content
+            <aside role='complementary'>
+            */
+            
+            /*
+            we use html shive coz
+            older browser doesn't support strucctural elements
+            and they don't apply styles to these tags.
+            also they treat these tags as spane
+            */
+            
+            /*
+            prefixes
+            some new css3 properties are still being tested.
+            so final specs can be different from how browsers are rendereing it currently.
+            
+            */
+            
+            /*
+            important > id > class/attribute/psuedo-class > element/psuedoelement/inherited valeus > default values
+            */
+            
+            /*
+            % relative to containing element
+            em relative to font-size of element
+            rem relative to font-size of <html>
+            */
+            
+            /*
+            inline elements will only be as wide and high as it needs to display its content.
+            block levle will occupy 100% of parent element's width
+            */
+            
+            /*
+            box-sizing tells browser how to measure the boxes.
+            not supported in ie <= 7 have to use polyfill
+            */
+            
+            /*
+            fixed position is quirky in mobile browser
+            http://bradfrostweb.com/blog/mobile/fixed-position/
+            */
+            
+            /*
+            media queries are not supported in ie <= 8
+            so html specific to ie <= 8 should be put inside this
+            <!--[if (lt IE 9)&(!IEMobile)]> 
+                ... html
+                <link rel='stylesheet' href='oldbrowser.css'>
+            <![endif]-->
+            
+            you can also use polyfill. but user has to enable javascript
+            */
+            
+            /*
+            grid based layout:
+            divide layout into columsn with gutter bw them and
+            arrange content into these columns
+            */
+            
+            /*
+            prefer css text than images
+            but use images for company logos
+            use image sprites
+            use icon fonts. icon fonts have alphanumerc characters replaced with icons
+            http://css-tricks.com/using-fonts-for-icons/
+            */
+            /*
+            jpeg good for photos. no transparency
+            gif transparency but only 256 colors
+            png-8 smaller than gif 256
+            png-24 larger than jpeg supports transparency
+            svg good for graphics. can rescale without affecting size
+            */
+            
+            /*
+            for high-density devices(retina) provide 2X scaled images
+            */
+            
+            /*
+            serving appropriate image based on screen size and pixel density
+            use polyfill called picturefill
+            */
+            
+            /*
+            Remember that for a responsive website, the first design is no design; 
+that is, th*/
+            
+            /*
+            Many of the mobile operating systems and manufacturers have emula-
+tors or simulators you can download; check out Maximiliano Firtman’s 
+“Mobile Emulators & Simulators: The Ultimate Guide” (
+http://www .
+mobilexweb .com/emulators
+) for an extensive list .
+However, rather than having to download a lot of different software, 
+you may find it easier to use a browser-based tool that will allow you to 
+test many devices or operating systems at once .
+Two of the most popular and comprehensive are BrowserStack (
+http://
+www .browserstack .com
+) and Cross Browser Testing (
+http://crossbrows-
+ertesting .com
+) . These have a monthly fee based on users or usage . You 
+can find many others, some free, by searching the Web  */
+            
+            /*n Web Typography” (
+http://alistapart .com/article/on-web-typog-
+raphy
+) by Jason Santa Maria on A List Apart 
+•	 “The Elements of Typographic Style Applied to the Web” (
+http://
+webtypography .net/toc/
+) by Richard Rutter
+            */
+            /*
+            Nested ems
+There is something a little confusing about ems that you need to be 
+aware of—their relative size is based on the font size of the parent ele-
+ment, not the default font size of the page . So, for example, suppose you 
+have this code:
+body { font-size: 100%; } 
+p { font-size: 2em; } 
+span { font-size: 1.5em; } 
+ 
+<div>This is 1 em.</div> 
+<p>This is 2 ems <span>(and 1.5 ems)</span>.</p>
+The <div> doesn’t have a font-size applied to it, so it will inherit the 
+page’s default size of 1 em .
+The <p> has a font-size of 2 ems, so it will be twice as big as the text 
+in the <div> .
+The <span> has a font-size of 1 .5 ems, but that’s not based on the base 
+font size; it’s based on the font size of the containing element, the <p>, in 
+which the text is already 2 ems . So the font size of the span, then, is 1 .5 
+times 2, which works out to 3 ems 
+            */
+            
+            /*
+            So how do you decide between ems and rems? Each has disadvantages . 
+Ems may cause weird things to happen if you nest elements with font-
+size applied, and rems require you to do extra work of adding fallback 
+code (unless you don’t support older browsers) .
+For most of your styles, ems should work all right, and you shouldn’t 
+frequently run into the nesting issue . And if you do have issues, you 
+can  often  solve  them  by  changing  which  particular  elements  you’re 
+applying font-size to .
+            */
+            
+            
+            /* setting optimal font size regardless of width
+            start with browser size of width = mobile screen width
+            set font-size so that each line has 45-75 characters(preferable lower)
+            now start widening, once number of characters exceed 75. add media query
+            either decrease the width or increase the margin. 
+            now keep increasing the width, if number of characters exceed 75, add another
+            media query. now you can either increase font size coz the browser window is too wide.
+            after a certain point you can decide to make it one column article and set a max-width
+            */
+            
+            /*
+            use this to test media queries: http://mqtest.io/
+            */
+            
+            /*
+            A clearfix is a class that can be added to your CSS and then to any element
+to ensure it fully contains its floated children. It works by adding invisible
+generated content that is either displayed block or table and then cleared,
+thereby clearing everything above it. 
+            */
+            
+            /*
+            Flexbox
+            content can be laid out vertically or horizontally,
+            can be laid along ssingle axis or across mlutple lines
+            can grow/shrink based on content.
+            multiple column layouts are easy
+            layout will not break with dynamically generated content.
+            layout will not break when user shrinks / stretches browser or changes orientation.
+            easily order the child elements
+            easily reorder the cchild elements
+            
+            flexbox is all about relationship bw parent container and direct descendent children container
+            parent is flex-container
+            descendants are flex-item
+            the direction along which flex-item is flex-axis. they flow from main-start to main-end. this length is main-size
+            cross-axis rain perpendicular to main-axis. there is cross-start, cross-end, cross-size
+            
+            
+            */
+            
+            /* flexbox is for arranging flex-items on one dimension
+            css grid layous is for arranging elements in 2 dimension
+            */
+            
+        </style>
+    </head>
+    <body>
+    </body>
+</html>

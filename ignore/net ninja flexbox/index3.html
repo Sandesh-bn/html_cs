@@ -1,0 +1,158 @@
+<html>
+
+<head>
+     <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        body {
+            background: #eee;
+        }
+        
+        .wrapper {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background: #333;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            display: block;
+            padding: 10px;
+        }
+        
+        nav a:hover {
+            background: #555;
+        }
+        
+        a.twitter {
+            background: url(tw.png) no-repeat center;
+            background-size: 80%;
+        }
+        
+        a.fb {
+            background: url(fb.png) no-repeat center;
+            background-size: 80%;
+        }
+        
+        .social {
+            max-width: 80px;
+        }
+        
+        article {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            flex: 0 1 30%;
+            transition: flex-basis 0.2s linear;
+        }
+        
+        article h2 {
+            text-align: center;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        
+        #blocks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        article.stack{
+            flex: 0 1 100%;
+        }
+        
+        @media screen and (min-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: space-between;
+            }
+            nav ul {
+                display: flex;
+            }
+            nav ul li {
+                flex: 1;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul>
+                <li><a href='#'>Home</a></li>
+                <li><a href='#'>About</a></li>
+                <li><a href='#'>Store</a></li>
+                <li><a href='#'>Contact</a></li>
+            </ul>
+            <ul class='social'>
+                <li>
+                    <a href='' class='fb'></a>
+                </li>
+                <li>
+                    <a href='' class='twitter'></a>
+                </li>
+            </ul>
+        </nav>
+        <div style='margin:20px;'>
+            <span>Layout</span>
+            <a href='#' class='stack'>Stack</a>
+            <a href='#' class='grid'>Grid</a>
+                     
+        </div>
+        <section id="blocks">
+            <article>
+                <h2>I pity the fool...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>Get to the chopper...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>What's a horse doing on a spaceship...?</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>I pity the fool...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>Get to the chopper...</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+            <article>
+                <h2>What's a horse doing on a spaceship...?</h2>
+                <p>Etiam aliquam sem ac velit feugiat elementum. Nunc eu elit velit, nec vestibulum nibh. Curabitur ultrices, diam non ullamcorper blandit, nunc lacus ornare nisi, egestas rutrum magna est id nunc. Pellentesque imperdiet malesuada quam, et rhoncus eros auctor eu. Nullam vehicula metus ac lacus rutrum nec fermentum urna congue.</p>
+            </article>
+        </section>
+
+    </div>
+    <script>
+        $("a.stack").on('click', function(){
+            $('article').addClass('stack');
+        })
+        $("a.grid").on('click', function(){
+            $('article').removeClass('stack');
+        })
+    </script>
+</body>
+
+</html>

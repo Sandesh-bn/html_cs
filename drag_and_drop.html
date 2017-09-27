@@ -1,0 +1,39 @@
+<html>
+  <style>
+    #dropbox{
+      float: left;
+      width: 500px;
+      height: 300px;
+      margin: 10px;
+      border: 1px solid #999;
+    }
+    #picturebox {
+      float: left;
+      width: 320px;
+      margin: 10px;
+      border: 1px solid #999;
+    }
+    #picturebox > img {
+      float: left;
+      padding: 5px;
+    }
+  </style>
+<body>
+  <section id="dropbox">
+    drag and drop image here.
+  </section>
+  <section id="picturebox">
+    <img id="image" src="./images/monster1.gif">
+  </section>
+  <style>
+    function intitate(){
+      s1 = document.getElementById('image');
+      s1.addEventListener('dragstart', dragged, false);
+      drop = document.getElementById('dropbox');
+      drop.addEventListener('dragenter', function(e){e.preventDefault()}, false);
+      drop.addEventListener('dragover', function(e){e.preventDefault()}, false);
+
+    }
+  </style>
+</body>
+<html>

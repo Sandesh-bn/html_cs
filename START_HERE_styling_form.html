@@ -1,0 +1,116 @@
+<html>
+    <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+        }   
+        form {
+            max-width: 800px;
+            padding: 15px;
+            background: #5890d0;
+        }
+        form h2{
+            margin: 0px;
+            color: white;
+            font-size: 2em;
+        }
+        form h3{
+            margin: -5px 0px 12px 0px;
+            color: #fff;
+            font-size: 1.2em;
+        }
+        form h4{
+            margin: 15px 0px 3px 0px;
+            color: white;
+            font-size: 1em;
+            
+        }
+        form label, form p{
+            margin: 0px 0px 6px 0px;
+            color: rgba(255, 255, 255, .8);
+            font-weight: bold;
+        }
+        form fieldset{
+            border: 1px solid rgba(255, 255, 255, .8);
+            margin: 15px 0 15px 0;
+            padding: 0 10px 10px 20px;
+        }
+        form textarea {
+            font-size: .8em;
+            padding: 5px;
+            border: none;
+            color: lightsalmon;
+        }
+        form textarea:focus{
+            border: 2px solid yellow;
+            position: relative;
+            left: -2px;
+            top: -2px;
+        }
+        form input:checked + label{
+            color: yellow;
+        }
+        form select{
+            -webkit-appearance: none;
+            appearance: none;
+            font-size: .9em;
+            background: transparent;
+            padding: 7px 45px 7px 10px;
+            border: 1px solid yellow;
+        }
+        form select:expand{
+            display: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        form input[type='submit']{
+            padding: .7em 1em;
+            background: #264581;
+            color: white;
+            margin: 1.5em;
+            -webkit-appearance: none;
+            appearance: none;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+    </head>
+<body>
+
+    <h2>Sign up</h2>
+    <h3>Our content</h3>
+    <form>
+        <h4>Categories of interest</h4>
+        <input type='checkbox' id='check-design' value='design' name="design">
+        <label for='check-design' >Design</label><br/>
+        <input type="checkbox" id='check-html' value='html' name='html'>
+        <label for='check-html'>HTML & CSS</label><br/>
+        <input type='checkbox' id='check-javascript' value='javascript' name='javascript'>
+        <label for='check-javascript' >Javascript</label><br/>
+        <fieldset>
+        <legend>Delivery Options</legend>
+            <h4>Choose a format</h4>
+            <input type="radio" id='text' value='text' name='format'>
+            <label for='text'>Text only</label><br/>
+            <input type='radio' id='radio-html' value='html' name='format'>
+            <label for='radio-html' >HTML(with images)</label><br/>
+            
+            <h4>Choose a frequency</h4>
+            <select id='frequency'>
+                <option value='daily'>Daily</option>
+                <option value='weekly'>Weekly</option>
+                <option value='monthly'>Monthly</option>
+            </select>
+            <h4>Comments</h4>
+            <textarea placeholder='enter comments' rows='2' cols='40'></textarea>
+        </fieldset>
+        <h4>Email</h4>
+        <input type='email' placeholder="Enter your full email"><br/>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

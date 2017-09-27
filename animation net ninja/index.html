@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <style>
+            body, html {
+                height; 100%;
+                width: 100%;
+                overflow: hidden; 
+                margin: 0;
+            }
+            
+            .grass, .sky, .road{
+                position: relative;
+            }
+            
+            #pop-up {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                background: yellow;
+                padding: 1em;
+                animation: drop .5s ease;
+            }
+            @keyframes drop{
+                0%{opacity: 0}
+                70%{transform: translateY(700px)}
+                100%{transform:translateY(650px); opacity: 1;}
+            }
+            .sky{
+                height: 40%;
+                background: skyblue;
+            }
+            
+            .grass {
+                height: 30%;
+                background: seagreen;
+            }
+            
+            .road {
+                height: 30%;
+                background: dimgrey;
+                box-sizing: border-box;
+                border-top: 10px solid grey;
+                width: 100%;
+            }
+            .lines {
+                box-sizing: border-box;
+                border: 5px dashed white;
+                height: 0px;
+                width: 100%;
+                position: absolute;
+                top: 75%;
+            }
+            .mario {
+                position: absolute;
+                top: -40px;
+                left: 0px;
+                animation-name: drive, jump;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;/*have the car stay at the final location*/
+                /*animation-delay: 3s;delay of 3s and then perform animation*/
+                animation-iteration-count:infinite;
+            }
+            
+            .luigi {
+                position: absolute;
+                animation-name: drive;
+                
+                animation-duration: 5s;
+                animation-iteration-count: infinite;
+            }
+            @keyframes drive{
+                from{transform: translateX(-200px)}
+                to{transform: translateX(2000px)}
+            }
+            
+            .cloud{
+                position: absolute;
+                animation: wind 40s linear infinite;
+            }
+            .cloud:nth-child(1){
+                width: 200px;
+                top: 120px;
+                opacity: .5;
+            }
+            .cloud:nth-child(2){
+                width: 300px;
+                top: 0;
+                animation-duration: 80s;
+            }
+            @keyframes wind{
+                from{left:-300px ;}
+                to{left: 100%;}
+            }
+            
+            @keyframes jump{
+                0%{ top: -40px}
+                30%{top: -100px}
+                100%{top: -40px}
+            }
+        </style>
+    </head>
+    <body> 
+        <div id="pop-up">
+            <h1>Hello user</h1>
+            <input type="text">
+            <input type="submit" value='ok'>
+        </div>
+        <div class="sky">
+            <img src="https://github.com/iamshaunjp/css-animations-playlist/blob/master/mario-examples/img/cloud.png?raw=true" alt="" class="cloud">
+             <img src="https://github.com/iamshaunjp/css-animations-playlist/blob/master/mario-examples/img/cloud.png?raw=true" alt="" class="cloud">
+        </div>
+        <div class="grass"></div>
+        <div class="road">
+            <div class="lines"></div>
+            <img class="mario" src="https://raw.githubusercontent.com/iamshaunjp/css-animations-playlist/master/mario-examples/img/mario.png" alt="">
+            
+            <img src="https://raw.githubusercontent.com/iamshaunjp/css-animations-playlist/master/mario-examples/img/luigi.png" alt="" class="luigi">
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,328 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // encapsulation: combine data and behaviore in the form of object
+            // aggregation: one object can reference another object.
+            // inheritance
+            // polymorphism one interface implemented by multiple objects
+            
+             Primitive values are 
+stored directly on the variable object, while reference values are placed as 
+a pointer in the variable object, which serves as a reference to a location 
+in memory where the object is stored.
+
+            //primitives: SSUNNB
+            // symbol, string, undefined, null, number, boolean,
+
+            // typeof is best way to determine a primitive type except for null
+            // best way to determine if it is a null is obj === null
+
+            //reference: FEDORA
+            // function, error, date, object, regex, array
+            /*
+            A function is the easiest reference type to identify because when you use 
+            the typeof operator on a function, the operator should return "function":
+            function reflect(value) {
+                return value;
+            }
+            console.log(typeof reflect);    // "function"
+            Other reference types are trickier to identify because, for all reference 
+            types other than functions, typeof returns "object". That’s not very help-
+            ful when you’re dealing with a lot of different types. To identify reference 
+            types more easily, you can use JavaScript’s instanceof operator. 
+            The instanceof operator can identify inherited types. That means 
+            every object is actually an instance of Object because every reference type 
+            inherits from Object. 
+            
+             If your environment is ECMAScript 5 compliant, Array.isArray() is the best way to identify arrays
+             
+             Perhaps one of the most confusing parts of JavaScript is the concept of 
+            primitive wrapper types. There are three primitive wrapper types (String, 
+            Number, and Boolean). 
+
+            The primitive wrapper types are reference types that are automati-
+            cally created behind the scenes whenever strings, num bers, or Booleans 
+            are read.
+
+            As you can see, creating an instance of the primitive wrapper type 
+            just creates another object, which means that typeof can’t identify the type 
+            of data you intend to store. 
+            In addition, you can’t use String, Number, and Boolean objects as you 
+            would primitive values. For example, the following code uses a Boolean 
+            object. The Boolean object is false, yet console.log("Found") still executes 
+            because an object is always considered true inside a conditional statement. 
+            It doesn’t matter that the object represents false; it’s an object, so it evalu-
+            ates to true.
+
+            var found = new Boolean(false);
+            if (found) {
+                console.log("Found");       // this executes
+            }
+            
+            function declaration are hoisted
+            function expression, anonymous functions are not hoisted.
+            
+            #no overloading in js. Last declared function alwasy wins
+            fun(99, 100, 101); // calls two-arg
+            function fun(a, b, c){
+              console.log(`three arguments ${a} ${b} ${c}`);
+            }
+
+            function fun(a, b){
+              console.log(`two arguments ${a} ${b}`);
+            }
+
+            fun(2, 5, 3); // calls two-arg function
+            
+            The fact that functions don’t have signatures in JavaScript doesn’t 
+            mean you can’t mimic function overloading. You can retrieve the number 
+            of parameters that were passed in by using the arguments object, and you 
+            can use that information to determine what to do. For example:
+            function sayMessage(message) {
+                if (arguments.length === 0) {
+                    message = "Default message";
+                }
+                console.log(message);
+            }
+            sayMessage("Hello!");  
+            
+            By default, all properties that you add to an object are enumerable, which 
+            means that you can iterate over them using a for-in loop. Enumerable 
+            properties have their internal [[Enumerable]] attributes set to true. The 
+            for-in loop enumerates all enumerable properties on an object, assigning 
+            the property name to a variable. 
+            
+            var property;
+            for (property in object) {
+                console.log("Name: " + property);
+                console.log("Value: " + object[property]);
+            }
+            Each time through the for-in loop, the property variable is filled with 
+            the next enumerable property on the object until all such properties have 
+            been used. At that point, the loop is finished and code execution contin-
+            ues. This example uses bracket notation to retrieve the value of the object 
+            property and output it to the console, which is one of the primary use 
+            cases for bracket notation in JavaScript.
+            
+             var properties = Object.keys(object);
+            // if you want to mimic for-in behavior
+            var i, len;
+            for (i=0, len=properties.length; i < len; i++){
+                console.log("Name: " + properties[i]);
+                console.log("Value: " + object[properties[i]]);
+            }
+            This example uses Object.keys() to retrieve the enumerable properties 
+            from an object u. A for loop is then used to iterate over the properties 
+            and output the name and value. Typically, you would use Object.keys() in 
+            situations where you want to operate on an array of property names and 
+            for-in when you don’t need an array.
+            n o T e   There is a difference between the enumerable properties returned in a  for-in loop 
+            and the ones returned by Object.keys(). The for-in loop also enumerates prototype 
+            properties, while Object.keys() returns only own (instance) properties. 
+            
+            var person1 = {
+             _name: "Nicholas",
+             get name() {
+                console.log("Reading name");
+                return this._name;
+            },
+             set name(value) {
+                console.log("Setting name to %s", value);
+                this._name = value;
+                }
+            };
+            
+             You can also explicitly call return inside of a constructor. If the returned value 
+            is an object, it will be returned instead of the newly created object instance. If the 
+            returned value is a primitive, the newly created object is used and the returned 
+            value is ignored.
+            Constructors allow you to initialize an instance of a type in a 
+             consistent way, performing all of the property setup that is necessary 
+            before the object can be used. For example, you could also use Object 
+            . defineProperty() inside of a constructor to help initialize the instance:
+            function Person(name) {
+                Object.defineProperty(this, "name", {
+                    get: function() {
+                        return name;
+                    },
+                    set: function(newName) {
+                        name = newName;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                this.sayName = function() {
+                    console.log(this.name);
+                };
+            }
+            In this version of the Person constructor, the name property is an 
+             accessor property that uses the name parameter for storing the actual 
+            name. This is possible because named parameters act like local variables.
+            Make sure to always call constructors with new; otherwise, you risk 
+            changing the global object instead of the newly created object. Consider 
+            what happens in the following code:
+            var person1 = Person("Nicholas");           // note: missing "new"
+            console.log(person1 instanceof Person);     // false
+            console.log(typeof person1);                // "undefined"
+            console.log(name);                          // "Nicholas"
+            
+            You can determine whether a property is on the prototype by using a func-
+            tion such as:
+            function hasPrototypeProperty(object, name) {
+                return name in object && !object.hasOwnProperty(name);
+            }
+            console.log(hasPrototypeProperty(book, "title"));             // false
+            console.log(hasPrototypeProperty(book, "hasOwnProperty"));    // true
+            If the property is in an object but hasOwnProperty() returns false, then 
+            the property is on the prototype .
+            
+            When a property is read on an object, the JavaScript engine first 
+            looks for an own property with that name. If the engine finds a correctly 
+            named own property, it returns that value. If no own property with that 
+            name exists on the target object, JavaScript searches the [[Prototype]] 
+            object instead. If a prototype property with that name exists, the value 
+            of that property is returned. If the search concludes without finding a 
+            property with the correct name, undefined is returned.
+
+            Several of the methods used in the past couple of chapters are actu-
+            ally defined on Object.prototype and are therefore inherited by all other 
+            objects. Those methods are:
+            hasOwnProperty()  Determines whether an own property with the 
+            given name exists
+            propertyIsEnumerable()  Determines whether an own property is 
+            enumerable
+            isPrototypeOf()  Determines whether the object is the prototype of 
+            another
+            valueOf()  Returns the value representation of the object
+            toString()  Returns a string representation of the object
+            These five methods appear on all objects through inheritance
+            
+            The valueOf() method gets called whenever an operator is used on an 
+            object. By default, valueOf() simply returns the object instance. The 
+            primitive wrapper types override valueOf() so that it returns a string for 
+            String, a Boolean for Boolean, and a number for Number. Likewise, the Date 
+            object’s valueOf() method returns the epoch time in milliseconds (just as 
+            Date.prototype.getTime() does). This is what allows you to write code that 
+            compares dates such as:
+            var now = new Date();
+            var earlier = new Date(2010, 1, 1);
+            u console.log(now > earlier);   
+            
+            toString()
+            The toString() method is called as a fallback whenever valueOf() returns a 
+            reference value instead of a primitive value. It is also implicitly called on 
+            primitive values whenever JavaScript is expecting a string. For example, 
+            when a string is used as one operand for the plus operator, the other 
+            operand is automatically converted to a string. If the other operand is a 
+            primitive value, it is converted into a string representation (for example, 
+            true becomes "true"), but if it is a reference value, then valueOf() is called. 
+            If valueOf() returns a reference value, toString() is called and the returned 
+            value is used. For example:
+            var book = {
+                title: "The Principles of Object-Oriented JavaScript"
+            };
+            var message = "Book = " + book;
+            console.log(message);               // "Book = [object Object]"
+            
+            This code constructs the string by combining "Book = " with book. Since 
+            book is an object, its toString() method is called. That method is inherited 
+            from Object.prototype and returns the default value of "[object Object]" in 
+            most JavaScript engines. If you are happy with that value, there’s no need 
+            to change your object’s toString() method. Sometimes, however, it’s use-
+            ful to define your own toString() method so that string conversions return 
+            a value that gives more information. Suppose, for example, that you want 
+            the previous script to log the book’s title:
+            var book = {
+                title: "The Principles of Object-Oriented JavaScript",
+                toString: function() {
+                    return "[Book " + this.title + "]"
+                }
+            };
+            var message = "Book = " + book;
+            // "Book = [Book The Principles of Object-Oriented JavaScript]"
+            u console.log(message);
+            
+            Avoid modifying Object.prototype.
+            
+             Given how often the for-in 
+            construct is used in JavaScript, modifying Object.prototype with enumer-
+            able properties has the potential to affect a lot of code. For this reason, 
+            Douglas Crockford recommends using hasOwnProperty() in for-in loops all 
+            the time, *  such as:
+            var empty = {};
+            for (var property in empty) {
+                if (empty.hasOwnProperty(property)) {
+                    console.log(property);
+                }
+            }
+            While this approach is effective against possible unwanted prototype 
+            properties, it also limits the use of for-in to only own properties, which 
+            may or may not be want you want. Your best bet for the most flexibility is 
+            to not modify Object.prototype.
+            
+            Because the prototype property is writable, you can change the proto-
+            type chain by overwriting it. Consider the following example:
+            u function Rectangle(length, width) { 
+                this.length = length;
+                this.width = width;
+            }
+            Rectangle.prototype.getArea = function() {
+                return this.length * this.width;
+            };
+            Rectangle.prototype.toString = function() {
+                return "[Rectangle " + this.length + "x" + this.width + "]";
+            };
+            // inherits from Rectangle
+            v function Square(size) { 
+                this.length = size;
+                this.width = size;
+            }
+            Square.prototype = new Rectangle();
+            Square.prototype.constructor = Square;
+            Square.prototype.toString = function() {
+                return "[Square " + this.length + "x" + this.width + "]";
+            };
+            var rect = new Rectangle(5, 10);
+            var square = new Square(6);
+            console.log(rect.getArea());        // 50
+            console.log(square.getArea());      // 36
+            console.log(rect.toString());       // "[Rectangle 5x10]"
+            console.log(square.toString());     // "[Square 6x6]"
+            console.log(rect instanceof Rectangle);     // true
+            console.log(rect instanceof Object);        // true
+            console.log(square instanceof Square);      // true
+            console.log(square instanceof Rectangle);   // true
+            console.log(square instanceof Object);      // true
+            In this code, there are two constructors: Rectangle u and Square v. The 
+            Square constructor has its prototype property overwritten with an instance 
+            of Rectangle. No arguments are passed into Rectangle at this point because 
+            they don’t need to be used, and if they were, all instances of Square would 
+            share the same dimensions. To change the prototype chain this way, you 
+            always need to make sure that the constructor won’t throw an error if the 
+            arguments aren’t supplied (many constructors contain initialization logic 
+            that may require the arguments) and that the constructor isn’t altering 
+            any sort of global state, such as keeping track of how many instances have 
+            been created. The constructor property is restored on Square.prototype 
+            after the original value is overwritten.
+            After that, rect is created as an instance of Rectangle, and square is 
+            created as an instance of Square. Both objects have the getArea() method 
+            because it is inherited from Rectangle.prototype. The square variable is 
+            considered an instance of Square as well as Rectangle and Object because 
+            instanceof uses the prototype chain to determine the object type. See 
+            
+            calling superclass method
+            Rectangle.prototype.toString = function() {
+                return "[Rectangle " + this.length + "x" + this.height + "]";
+            };
+            
+            // call the supertype method
+            Square.prototype.toString = function() { 
+                var text = Rectangle.prototype.toString.call(this);
+                return text.replace("Rectangle", "Square");
+            };
+            */
+        
+        </script>
+    </body>
+</html>

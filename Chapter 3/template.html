@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+        .grey {
+            background: #ccc;
+            padding: 20px;
+        }  
+        .col-md-9 {
+            background: grey;
+        }
+        .intro-block{
+            background: url(./images/purpalt.png) repeat;
+            padding: 100px 15px 60px;
+            color: white;
+        }
+        .text-muted {
+            font-weight: 100;
+        }
+        
+        .tpad {
+            padding: 20px;
+        }
+        
+        .carousel-caption {
+            z-index: 10;
+        }
+        .carousel-inner > .item > img{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            min-width: 100%;
+            height: auto;
+        }
+        .marketing {
+            background: #e9e6df;
+        }
+        
+        hr {
+            border-top: 1px solid #c9c9c9;
+        }
+        
+        .info {
+            background: #ffa753 url(./images/skyline.png) repeat-x bottom;
+            padding: 80px 0;
+        }
+    </style>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+           <div class="navbar-header">
+               <button class="navbar-toggle" data-toggle='collapse' data-target='.navbar-collapse'>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+               </button>
+               <a href="index.html" class="navbar-brand">MoveMe</a>
+           </div>
+           <div class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+                   <li class="active"><a href="index.html">Home</a></li>
+                   <li ><a href="index.html">Blog</a></li>
+                   <li ><a href="index.html">Clients</a></li>
+                   <li ><a href="index.html">Contact</a></li>
+                   <li class="dropdown">
+                       <a href="" class="dropdown-toggle" data-toggle="dropdown">Social <b class="caret"></b></a>
+                       <ul class="dropdown-menu">
+                           <li><a href="#">Facebook</a></li>
+                           <li><a href="#">Twitter</a></li>
+                           <li><a href="#">Google+</a></li>
+                       </ul>
+                   </li>
+               </ul>
+           </div>
+       </nav>
+    <!-- end of navigation -->
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="images/slide1.jpg" alt="">
+                <div class="container active">
+                    <div class="carousel-caption">
+                        <h1>MOVE ME</h1>
+                        <p>some more parand more para</p>
+                        <p><a href="#" class="btn btn-primary"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="images/moveMe.png" alt="" class="img-responsive tpad">
+                </div>
+                <div class="col-xs-9">
+                    <h1>Move me <span class="text-muted">&raquo;your travel companion</span></h1>
+                    <p class="lead">Some marketing content goes here..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of intro -->
+    <div class="marketing">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6"><img src="images/app.png" alt="" class="img-responsive"></div>
+                <div class="col-sm-6"><h3 class="tpad">Some marketing content</h3><hr><p>some random text reltaed to image on the right.</p></div>
+                <p><a href="#" class="btn btn-large btn-default">Get it now</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- end of content --> 
+    
+    <div class="info">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 tabbable">
+                    <!-- Tab goes here -->
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active"><a href="#android" data-toggle="tab">Android</a></li>
+                        <li><a href="#ios" data-toggle="tab">IOS</a></li>
+                        <li><a href="#windows" data-toggle="tab">Windows</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="android"><p><img src="images/gplay.jpg" alt="" class="pull-right"><Android class="span glyphicon glyphicon-star"></Android></p></div>
+                        
+                        <div class="tab-pane fade in" id="ios">
+                            <p><img src="images/appstore.jpg" alt="" class="pull-right">IOS...</p>
+                        </div>
+                        
+                        <div class="tab-pane fade in" id="windows">
+                            <p><img src="images/winstore.jpg" class="pull-right" alt=""></p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-sm-4 col-sm-offset-2">
+                    <!-- quotes -->
+                    <blockquote>&ldquo;some raondom cquote filled with speeliing mistaykes. &rdquo;</blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of info panel -->
+    <div class="ftr">
+        <div class="container">
+            <div class="row">
+                <footer>
+                    <div class="pull-left ft_space">
+                        <address>
+                            <h3>MoveMe Inc.</h3>
+                            some where, some city<br>
+                            some state<br>
+                            <a href="mailto: first.last@move.com">
+                                hello@moveme.com
+                            </a>
+                            <abbr title="Phone">P:</abbr>
+                            
+                        </address>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<html>
+    <head></head>
+    <body>
+        
+        <script>
+        undefined is a value that js assigns to a viralbe if it hasn't been intialized
+        null is a value that a programmer can assign
+        
+        $$js design patterns
+        var Singleton = (function(){
+                var instance;
+                function createInstance(){
+                    var object = new Object("I am the only instance.");
+                    return object;
+                }
+
+                return {
+                    getInstance: function(){
+                        if(!instance)
+                            instance = createInstance();
+                        return instance;
+                    }
+                }
+        })();
+         
+        
+        ver Person = () => {
+            var person = {};
+            person.running = false;
+            person.toggleRunning = () => {this.running = !this.running}
+            return person;
+            
+        }
+        let p1 = Person();
+        let p2 = Person();
+        t1.toggleRunning();
+            
+        $$ architecture of react 
+        
+        hello world
+        
+        import React, { Component } from 'react';
+        import ReactDOM from 'react-dom';
+            
+        class Hello extends React.Component {
+            render(){
+                return(
+                    <div>Hello World</div>
+                )
+            }
+        }
+            
+        $ coding standards
+        use const for functions, and constants
+        use let for all the other variables
+        use object destrucuturing and spread operator whenever possible.
+        template string for multilien string and strings with variable
+            use descritive names
+            queryUrl() instead of q()
+        
+        $ lifecycle methods
+        
+        $ pure and impure functions
+        export class Home extends React.Component {
+            render(){
+                return(
+                )
+            }
+        }
+            
+        export const Home = (props) => {
+            return (
+                
+            )
+        }
+        $ redux
+        
+        $ react is it client side or server side
+        client facing
+        $ state adn stateless components
+        
+        $ spread operator
+        let arr = [2, 4, 1, -4]
+        min_v
+        
+        
+        comparision bw frameworks
+        angular has a lot of inbuild packages: router animation, form-validation
+        angular uses typescript
+        
+        al = Math.min([...arr])
+        let copy = [...arr]
+        
+        $ communication from parent to child and child to parent
+        
+        $ which version
+        15.5
+        
+        $ es6 concepts
+        let const class, extends, destructuring, spread, promises, 
+        template string, sets map weakset
+        
+        $ babeljs
+        
+        css optimization
+        use sprites
+        put css at the top
+        split css
+        minify css
+        avoid using style tag they are render-blocking
+        use css shorthand
+        
+        If I want a child to update the state of its parent how would i do it?
+        create a method inside of parent where we accept a parameter and call this.setState and assigne that parameter to the state.
+        pass this method as a prop to child. inside of child call the method using prop object
+        
+        
+        webpack
+        bundle all files together
+        and transform es6 into es5
+        module bundler takes custom modules or files instlaled thru npm and creates sttic files
+        has loaders that can transform jsx sass to js
+        
+        package json
+        manifest file has information for all dependency
+        
+        higher order component is a function that accepts omponent as a parameter and returns augmented component
+        this new component will be wrapped with additional functionalities
+        hoc should be pure function
+        
+        environment setup
+        redux saga
+        What are some engineering challenges you've had to overcome in your previous roles?
+        What dev tools do you use in debugging your code?
+            pure and functional components
+        function declaration and function expression
+        
+        webpack
+        entry: where webpack starts bundling process
+        outputoutput: webpack puts the bundlesd file
+        
+        loaders: transformations applied ont he file
+        
+        babel, react, react-dom
+        $ data types in js
+        
+        install node
+        npm init
+        production dependeny: reactjs, react-dom, 
+        dev dependency:
+            webpack
+        babel-reload babel-preset-react
+        </script>
+    </body>
+</html>
